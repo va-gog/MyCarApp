@@ -1,24 +1,23 @@
 //
-//  DoorLockedState.swift
-//  BottomBar
+//  DoorProgressState.swift
+//  MyCar
 //
-//  Created by Gohar Vardanyan on 6/19/24.
+//  Created by Gohar Vardanyan on 6/20/24.
 //
 
 import Foundation
 
-struct DoorLockedState: DoorStateInterface {    
+struct DoorUnlockingState: DoorStateInterface  {
     var text: String {
-        "Locked"
+        "..."
     }
     
-    //ui
-    // specificUI
+    //user info
     
     var state: DoorStates {
-        .locked
+        .unlocking
     }
-    
+
     func next() -> any SettingItemStateInterface {
         return DoorUnlockingState()
     }

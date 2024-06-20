@@ -7,12 +7,16 @@
 
 import Foundation
 
-struct DoorUnlockedState: DoorState {
-    var locked: Bool {
-        false
+struct DoorUnlockedState: DoorStateInterface {
+    var text: String {
+        "Unlocked"
     }
     
-    func next() -> DoorState {
-        return DoorLockedState()
+    var state: DoorStates {
+        .unlocked
+    }
+
+    func next() -> any SettingItemStateInterface {
+        return DoorLockingState()
     }
 }

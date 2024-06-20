@@ -52,9 +52,3 @@ struct RefreshableView: View {
             }
         }
 }
-
-struct RefreshableView_Previews: PreviewProvider {
-    static var previews: some View {
-        RefreshableView()
-    }
-}

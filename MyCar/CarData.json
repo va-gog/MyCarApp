@@ -1,20 +1,21 @@
 {
-    "car": {
-        "name": "CX-30",
-        "fuel": "120",
-        "images": [
-            "image1", "car2", "image1", "car2"
-        ],
-        "settings": {
-            "doors": {
-                "name": "doors",
-                "locked": true
-            },
-            "engine": {
-                "name": "engine",
-                "started": true
-            }
+ "car": {
+    "name": "CX-30",
+    "fuel": "120",
+    "images": [
+        "image1", "car2", "image1", "car2"
+    ],
+    "settings": {
+        "doors": {
+            "name": "doors",
+            "title": "DOORS",
+            "locked": true
+        },
+        "engine": {
+            "name": "engine",
+            "title": "ENGINE",
+            "started": true
         }
     }
+  }
 }
-

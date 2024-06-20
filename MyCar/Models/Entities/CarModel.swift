@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CarModel: Codable {
+struct CarModel: Decodable {
     let name: String
     let fuel: String
     let images: [String]

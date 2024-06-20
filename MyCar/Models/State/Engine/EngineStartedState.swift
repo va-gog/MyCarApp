@@ -7,12 +7,15 @@
 
 import Foundation
 
-struct EngineStartedState: EngineState {
-    var started: Bool {
-        true
+class EngineStartedState: EngineStateInterface {
+    var text: String = ""
+    // UI
+
+    var state: EngineState {
+        .started
     }
     
-    func next() -> EngineState {
+    func next() -> any SettingItemStateInterface {
         return EngineStoppedState()
     }
 }
