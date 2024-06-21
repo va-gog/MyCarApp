@@ -7,8 +7,8 @@
 
 import Foundation
 
-class EngineStartedState: EngineStateInterface {
-    var text: String = ""
+struct EngineStartedState: EngineStateInterface {
+    var text: String?
     // UI
 
     var state: EngineState {

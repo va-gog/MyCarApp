@@ -8,7 +8,7 @@
 import Foundation
 
 struct DoorUnlockedState: DoorStateInterface {
-    var text: String {
+    var text: String? {
         "Unlocked"
     }
     

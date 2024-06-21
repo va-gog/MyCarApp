@@ -10,5 +10,6 @@ import Foundation
 protocol CarMainScreenViewModelInterface {
     func fetchInfoWithURL(_ url: URL?)
     func buttonAction(buttonType: ButtonType)
-    func lockChangesAccepted()
+    func lockIfPossible()
+    func unlockIfPossible()
 }

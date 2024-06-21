@@ -13,7 +13,6 @@ struct CarSettingView: View {
         GridItem(.flexible(), spacing: 15)
     ]
     
-//    @Binding var doorState: SettingItemUIInfoInterface
     var buttonAction: ((ButtonType) -> Void)?
     @Binding var settings: [SettingItemUIInfoInterface]
     
@@ -29,12 +28,15 @@ struct CarSettingView: View {
                                     .font(.headline)
                                     .padding(.leading, 5)
                                     .fontWeight(.bold)
-                                Divider()
-                                Text(doorState.state.text)
-                                    .font(.system(size: 12))
-                                    .foregroundColor(.gray)
-                                
-                                
+                                if let text = doorState.state.text {
+                                    Divider()
+                                        .background(.black)
+                                        .frame(width: 20)
+                                    Text(text)
+                                        .font(.system(size: 12))
+                                        .foregroundColor(.gray)
+                                    
+                                }
                                 Spacer()
                             }
                             .padding(.top, 5)
@@ -48,7 +50,6 @@ struct CarSettingView: View {
                                     self.buttonAction?(.unlock)
                                     
                                 }, doorState: $settings[index].state)
-                                
                             }
                             if  settings[index].state is EngineStateInterface {
                                 EngineSettingsView(onStartedButtonTapped: {
@@ -69,7 +70,6 @@ struct CarSettingView: View {
         }
         
     }
-    
 }
     
 

@@ -7,9 +7,6 @@
 
 import SwiftUI
 
-
-// TODO: fix plus button
-
 struct PaginationView: View {
     private let rectangleWidth: CGFloat = 30
     private let rectangleHeight: CGFloat = 2
@@ -48,7 +45,7 @@ struct PaginationView: View {
         let maxPagCount = min(pageCount, totalImages)
         return ForEach(0..<maxPagCount, id: \.self) { index in
             Rectangle()
-                .fill(currentIndex == index ? Color(hex: 0xA66A53) : .gray)
+                .fill(shouldShowSelected(index: index) ? Color(hex: 0xA66A53) : .gray)
                 .frame(width: rectangleWidth, height: rectangleHeight)
         }
     }
@@ -57,6 +54,11 @@ struct PaginationView: View {
         Text("+")
             .foregroundColor(.gray)
             .opacity(shouldShowRightPlus ? 1 : 0)
+    }
+    
+    // remove into interface
+    private func shouldShowSelected(index: Int) -> Bool {
+        return currentIndex == index || (index == pageCount - 1 && currentIndex > index)
     }
 
     private var shouldShowLeftPlus: Bool {

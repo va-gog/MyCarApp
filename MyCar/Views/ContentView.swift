@@ -7,21 +7,11 @@
 
 import SwiftUI
 
-struct Car: Identifiable {
-    var id = UUID()
-    var name: String
-    var fuel: String
-    var doorsLocked: Bool
-    var lastUpdated: String
-    var location: String
-    var alerts: Int
-    var messages: Int
-}
-
 struct ContentView: View {
-    @StateObject private var viewModel = CarScreenViewModel(fetchService: CarDataFetchModel(fetchService: DataFetchService()))
+    @StateObject private var viewModel = CarScreenViewModel(fetchService: CarDataFetchModel(fetchService: DataFetchService()), timerManager: TimerManager())
     private let carDataURL = Bundle.main.url(forResource: "CarData", withExtension: "json")
-    
+    @State private var showModal = false
+
     var body: some View {
         ZStack(alignment: .top, content: {
             switch viewModel.fetchState {
@@ -33,26 +23,42 @@ struct ContentView: View {
                         VStack(spacing: 0) {
                             CarDescriptionView(car: viewModel.interfaceState.carDescription)
                                 .background(.white)
-                            ImagesCollectionView(viewModel: ImagePagingViewModel(images: viewModel.interfaceState.carDescription.imagesNames))
+                            ImagesCollectionView(viewModel: ImagePagingViewModel(images: viewModel.interfaceState.carDescription.imagesNames,
+                                                                                 currentIndex: viewModel.currentIndex),
+                                                 showRefreshOverlay: $viewModel.updatedTime)
                             CarSettingView(buttonAction: { buttonType in
-                                self.viewModel.buttonAction(buttonType: buttonType)
-
+                                withAnimation {
+                                    self.viewModel.buttonAction(buttonType: buttonType)
+                                }
                             }, settings: $viewModel.interfaceState.settingsStates)
                                     
                             Spacer()
                             BottomBar().background(.white)
                         }
-                        .alert(isPresented: $viewModel.showAlert) {
-                                    Alert(
-                                        title: Text("Are you sure?"),
-                                        message: Text("Please confirm that you want to lock the doors of “ROGUE SPT”."),
-                                        primaryButton: .default(Text("Yes, Lock")) {
-                                            // Action for locking the doors
-                                            print("Locking the doors")
-                                        },
-                                        secondaryButton: .cancel()
-                                    )
-                                }
+                        if viewModel.showAlert {
+                            Color.black.opacity(0.5)
+                                                .edgesIgnoringSafeArea(.all)
+                                        
+                            AlertView(
+                                showModal: $showModal, 
+                                title: "Are you sure?",
+                                            message: "Please confirm that you want to lock the doors of “ROGUE SPT”.",
+                                            onCancel: {
+                                                withAnimation {
+                                                    self.viewModel.showAlert = false
+                                                }
+                                            },
+                                            onConfirm: {
+                                                withAnimation {
+                                                    self.viewModel.showAlert = false
+                                                    viewModel.lockIfPossible()
+                                                }
+                                            }
+                            )
+                                        .transition(.opacity)
+                                        .animation(.easeInOut, value: viewModel.showAlert)
+                                        .zIndex(1)
+                                    }
                     }
                    
                  
@@ -64,7 +70,6 @@ struct ContentView: View {
         .onAppear {
             viewModel.fetchInfoWithURL(carDataURL)
         }
-        
         
     }
 }

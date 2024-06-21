@@ -12,16 +12,31 @@ import Combine
  This ViewModel is for initial setups of an initial UI.
  During initial setup this ViewModel will fetch data about a selected car.
  */
+
 final class CarScreenViewModel: ObservableObject, CarMainScreenViewModelInterface {
-    private var fetchService: CarDataFetchServiceProtocol
-        
     @Published var interfaceState: CarInterfaceState
     @Published var fetchState: FetchState = .loading
-    @Published var showAlert: Bool = false
+    @Published var showAlert = false
+    @Published var timeSinceLastUpdate = ""
+    @Published var updatedTime: String?
+    var currentIndex = CurrentValueSubject<Int, Never>(0)
 
-    init(fetchService: CarDataFetchServiceProtocol, interfaceState: CarInterfaceState = CarInterfaceState()) {
+    private var fetchService: CarDataFetchServiceProtocol
+    private var timerManager: TimerManagerInterface
+    
+    private var cancellables = Set<AnyCancellable>()
+
+    init(fetchService: CarDataFetchServiceProtocol, timerManager: TimerManagerInterface, interfaceState: CarInterfaceState = CarInterfaceState()) {
         self.fetchService = fetchService
         self.interfaceState = interfaceState
+        self.timerManager = timerManager
+        
+        //checks for lock unlock allow
+       timerManager.timerCompleted.sink { [weak self] ended in
+           self?.interfaceState.settingsStates.first(where:{ $0.state is DoorStateInterface} )?.changeState()
+           // TODO: this value and (min, hour) must be calculated with some logic
+           self?.updatedTime = "1 min"
+       }.store(in: &cancellables)
     }
     
     func setupWithData(_ carData: CarModel) {
@@ -54,7 +69,7 @@ final class CarScreenViewModel: ObservableObject, CarMainScreenViewModelInterfac
     func buttonAction(buttonType: ButtonType) {
         switch buttonType {
         case .unlock:
-            showAlert = true
+                showAlert = true
         case .lock:
             showAlert = false
         case .start:
@@ -65,9 +80,19 @@ final class CarScreenViewModel: ObservableObject, CarMainScreenViewModelInterfac
         }
     }
     
-    func lockChangesAccepted() {
-        
+    func lockIfPossible() {
+        let state = interfaceState.settingsStates.first(where:{ $0.state is DoorStateInterface} )
+        guard state?.state is DoorLockedState else { return }
+        state?.changeState()
+        timerManager.startTimer(prefix: 5)
     }
+    
+    func unlockIfPossible() {
+        let state = interfaceState.settingsStates.first(where:{ $0.state is DoorStateInterface} )
+        guard state?.state is DoorLockedState else { return }
+        state?.changeState()
+        timerManager.startTimer(prefix: 5)
+    }    
     
     private func itemModel(_ model: SettingModelProtocol) -> SettingItemUIInfoInterface? {
         switch model {

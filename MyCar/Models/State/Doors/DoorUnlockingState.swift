@@ -7,8 +7,13 @@
 
 import Foundation
 
+struct DoorSettingsUIElements {
+    let leftButtonIcon = Icon.locked.iconName
+    let rightButtonIcon = Icon.unlocked.iconName
+}
+
 struct DoorUnlockingState: DoorStateInterface  {
-    var text: String {
+    var text: String? {
         "..."
     }
     
@@ -19,6 +24,6 @@ struct DoorUnlockingState: DoorStateInterface  {
     }
 
     func next() -> any SettingItemStateInterface {
-        return DoorUnlockingState()
+        return DoorUnlockedState()
     }
 }

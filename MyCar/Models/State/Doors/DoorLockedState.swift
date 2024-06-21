@@ -8,9 +8,7 @@
 import Foundation
 
 struct DoorLockedState: DoorStateInterface {    
-    var text: String {
-        "Locked"
-    }
+    var text: String?
     
     //ui
     // specificUI

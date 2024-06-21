@@ -8,47 +8,27 @@
 import SwiftUI
 
 struct RefreshableView: View {
-    @State private var lastUpdateTime: Date = Date()
-    @State private var timeSinceLastUpdate: String = NSLocalizedString("Updated just now", comment: "")
-
+    @Binding var timeSinceLastUpdate: String?
     var body: some View {
         HStack {
-            Spacer()
-            Button(action: {
-                refreshData()
-            }) {
-                Image(Icon.refresh.iconName)
+                Spacer()
+                Button(action: {
+                    refreshData()
+                }) {
+                    Image(Icon.refresh.iconName)
                         .resizable()
                         .frame(width: 24, height: 24)
-            }
-
-            Text(timeSinceLastUpdate)
-                .font(.subheadline)
-
-            Spacer()
+                }
+                
+                Text("Updated \(timeSinceLastUpdate ?? "") ago")
+                    .font(.subheadline)
+                
+                Spacer()
         }
         .padding()
-        .onAppear {
-            updateTimeSinceLastUpdate()
-        }
     }
 
     private func refreshData() {
-        lastUpdateTime = Date()
-        updateTimeSinceLastUpdate()
+        timeSinceLastUpdate = nil
     }
-
-    private func updateTimeSinceLastUpdate() {
-            let now = Date()
-            let formatter = DateComponentsFormatter()
-            formatter.unitsStyle = .full
-            formatter.allowedUnits = [.minute, .hour, .day]
-            formatter.maximumUnitCount = 1
-
-            if let formattedString = formatter.string(from: lastUpdateTime, to: now) {
-                timeSinceLastUpdate = "Updated \(formattedString) ago"
-            } else {
-                timeSinceLastUpdate = "Updated just now"
-            }
-        }
 }

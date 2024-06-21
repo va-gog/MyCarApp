@@ -11,8 +11,8 @@ struct ImagesCollectionView: View {
     @ObservedObject var viewModel: ImagePagingViewModel
     
     @GestureState private var translation: CGFloat = 0
-    @State private var showRefreshOverlay: Bool = false
-    
+    @Binding var showRefreshOverlay: String?
+        
     private let imageHeight: CGFloat = 255
     
     var body: some View {
@@ -26,10 +26,10 @@ struct ImagesCollectionView: View {
                 }
                 .frame(width: geometry.size.width * CGFloat(viewModel.images.count),
                        alignment: .leading)
-                .offset(x: -CGFloat(viewModel.currentIndex) * geometry.size.width)
+                .offset(x: -CGFloat(viewModel.currentIndex.value) * geometry.size.width)
                 .offset(x: viewModel.validTranslation(translationX: translation))
                 .animation(.interactiveSpring(),
-                           value: viewModel.currentIndex)
+                           value: viewModel.currentIndex.value)
                 .gesture(dragGesture(geometry: geometry))
             }
             .frame(height: imageHeight)
@@ -37,7 +37,7 @@ struct ImagesCollectionView: View {
                      alignment: .bottom)
             .overlay(
                 refreshOverlay
-                    .opacity(showRefreshOverlay ? 1 : 0)
+                    .opacity(showRefreshOverlay != nil ? 1 : 0)
                     .animation(.easeInOut, value: showRefreshOverlay)
                     .padding(.top, 0),
                 alignment: .top
@@ -54,7 +54,7 @@ struct ImagesCollectionView: View {
     }
     
     private var paginationOverlay: some View {
-        PaginationView(currentIndex: viewModel.currentIndex,
+        PaginationView(currentIndex: viewModel.currentIndex.value,
                        totalImages: viewModel.images.count,
                        pageCount: 3)
         .offset(y: -15)
@@ -62,7 +62,7 @@ struct ImagesCollectionView: View {
     }
     
     private var refreshOverlay: some View {
-        RefreshableView()
+        RefreshableView(timeSinceLastUpdate: $showRefreshOverlay)
             .offset(y: 12)
     }
     

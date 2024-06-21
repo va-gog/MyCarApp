@@ -8,7 +8,7 @@
 import Foundation
 
 struct DoorLockingState: DoorStateInterface {
-    var text: String {
+    var text: String? {
         "..."
     }
     
