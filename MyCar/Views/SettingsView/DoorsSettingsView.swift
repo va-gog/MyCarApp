@@ -8,41 +8,52 @@
 import SwiftUI
 
 struct DoorsSettingsView: View {
-    var onLockedButtonTapped: () -> Void
-    var onUnlockedButtonTapped: () -> Void
+    let onLockedButtonTapped: () -> Void
+    let onUnlockedButtonTapped: () -> Void
     
     @Binding var doorState: SettingItemStateInterface
-
+    
     var body: some View {
         if let doorState = doorState as? DoorStateInterface {
             HStack(spacing: 7) {
                 Spacer()
                 let isInProgress = doorState.state == .locking || doorState.state == .unlocking
+                
                 if !isInProgress {
-                    CustomButtonView {
-                        Image(Icon.locked.iconName)
-                            .resizable()
-                            .background( doorState.state == .unlocked ? Color(hex: ProjectColorSpecs.lightGray) : .black)
-                    } action: {
-                        onLockedButtonTapped()
-                    }
+                    doorButton(
+                        icon: doorState.uiFixedState.leftIcon,
+                        attributes: doorState.uiFixedState,
+                        foregroundColor: doorState.uiChangableState.leftButtonIconColor,
+                        backgroundColor: doorState.uiChangableState.leftButtonBackground,
+                        action: onLockedButtonTapped
+                    )
                 } else {
-                    CircularLoadingView(color: Color(hex: ProjectColorSpecs.lightBrown), lineWidth: 5, frameSize: 65)
+                    CircularLoadingView(color: doorState.uiFixedState.circleColor,
+                                        lineWidth: doorState.uiFixedState.circleWidth,
+                                        frameSize: doorState.uiFixedState.buttonSize.height,
+                                        animationDuration: doorState.uiFixedState.animationDuration)
                 }
                 
-                CustomButtonView {
-                    Image(Icon.unlocked.iconName)
-                        .resizable()
-                        .background(isInProgress ? Color(hex: ProjectColorSpecs.lightGray) : .black)
-                    
-                } action: {
-                    onUnlockedButtonTapped()
-                }
+                doorButton(
+                    icon: doorState.uiFixedState.rightIcon,
+                    attributes: doorState.uiFixedState,
+                    foregroundColor: doorState.uiChangableState.rightButtonIconColor,
+                    backgroundColor: doorState.uiChangableState.rightButtonBackground,
+                    action: onUnlockedButtonTapped
+                )
+                
                 Spacer()
             }
-            .padding(.top, 15)
-            .padding(.bottom, 15)
-            .background(Color.white)
+            .padding(.vertical, doorState.uiFixedState.horizontalPadding)
+            .background(doorState.uiFixedState.backgroundColor)
         }
+    }
+    
+    private func doorButton(icon: String, attributes: DoorUIFixedAttributes, foregroundColor: Color, backgroundColor: Color, action: @escaping () -> Void) -> some View {
+        self.modifier(DoorButtonModifier(icon: icon,
+                                         attributes: attributes,
+                                         foregroundColor: foregroundColor,
+                                         backgroundColor: backgroundColor,
+                                         action: action))
     }
 }

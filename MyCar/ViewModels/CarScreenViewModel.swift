@@ -8,11 +8,6 @@
 import Foundation
 import Combine
 
-/*
- This ViewModel is for initial setups of an initial UI.
- During initial setup this ViewModel will fetch data about a selected car.
- */
-
 final class CarScreenViewModel: ObservableObject, CarMainScreenViewModelInterface {
     @Published var interfaceState: CarInterfaceState
     @Published var fetchState: FetchState = .loading
@@ -21,12 +16,12 @@ final class CarScreenViewModel: ObservableObject, CarMainScreenViewModelInterfac
     @Published var updatedTime: String?
     var currentIndex = CurrentValueSubject<Int, Never>(0)
 
-    private var fetchService: CarDataFetchServiceProtocol
+    private var fetchService: DataFetchServiceProtocol
     private var timerManager: TimerManagerInterface
     
     private var cancellables = Set<AnyCancellable>()
 
-    init(fetchService: CarDataFetchServiceProtocol, timerManager: TimerManagerInterface, interfaceState: CarInterfaceState = CarInterfaceState()) {
+    init(fetchService: DataFetchServiceProtocol, timerManager: TimerManagerInterface, interfaceState: CarInterfaceState = CarInterfaceState()) {
         self.fetchService = fetchService
         self.interfaceState = interfaceState
         self.timerManager = timerManager

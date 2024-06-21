@@ -12,8 +12,10 @@ struct ImagesCollectionView: View {
     
     @GestureState private var translation: CGFloat = 0
     @Binding var showRefreshOverlay: String?
-        
+    
     private let imageHeight: CGFloat = 255
+    private let paginationViewBottomInset: CGFloat = -15
+    private let updateViewTopInset: CGFloat = 12
     
     var body: some View {
         ZStack {
@@ -54,16 +56,19 @@ struct ImagesCollectionView: View {
     }
     
     private var paginationOverlay: some View {
-        PaginationView(currentIndex: viewModel.currentIndex.value,
-                       totalImages: viewModel.images.count,
-                       pageCount: 3)
-        .offset(y: -15)
+        PaginationView(
+            selectedIndex: $viewModel.currentIndex.value,
+            shouldShowLeftPlus: $viewModel.shouldShowLeftIcon,
+            shouldShowRightPlus: $viewModel.shouldShowRightIcon,
+            pagesCount: viewModel.pagesCount)
+        
+        .offset(y: paginationViewBottomInset)
         
     }
     
     private var refreshOverlay: some View {
         RefreshableView(timeSinceLastUpdate: $showRefreshOverlay)
-            .offset(y: 12)
+            .offset(y: updateViewTopInset)
     }
     
     private func dragGesture(geometry: GeometryProxy) -> some Gesture {

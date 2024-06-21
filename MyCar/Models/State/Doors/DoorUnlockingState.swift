@@ -5,22 +5,26 @@
 //  Created by Gohar Vardanyan on 6/20/24.
 //
 
-import Foundation
-
-struct DoorSettingsUIElements {
-    let leftButtonIcon = Icon.locked.iconName
-    let rightButtonIcon = Icon.unlocked.iconName
-}
+import SwiftUI
 
 struct DoorUnlockingState: DoorStateInterface  {
     var text: String? {
         "..."
     }
     
-    //user info
-    
     var state: DoorStates {
         .unlocking
+    }
+    
+    var uiChangableState: DoorChangableInterface {
+        DoorUIChangableAttributes(leftButtonBackground: .white,
+                         leftButtonIconColor: .white,
+                         rightButtonBackground: .gray,
+                         rightButtonIconColor: .yellow)
+    }
+    
+    var uiFixedState: DoorUIFixedAttributes {
+        DoorUIFixedAttributes()
     }
 
     func next() -> any SettingItemStateInterface {

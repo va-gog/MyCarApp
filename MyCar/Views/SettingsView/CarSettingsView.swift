@@ -8,10 +8,19 @@
 import SwiftUI
 
 struct CarSettingView: View {
-    let columns = [
+    private let columns = [
         GridItem(.flexible(), spacing: 15),
         GridItem(.flexible(), spacing: 15)
     ]
+    private let dividerWidth: CGFloat = 20
+    private let describeTextSize: CGFloat = 12
+    private let shadowOpacity: CGFloat = 0.2
+    private let shadowOffset = CGPoint(x: 0, y: 2)
+    private let shadowRadius: CGFloat = 5
+    private let settingItemRadius: CGFloat = 5
+    private let titleLeadingPadding: CGFloat = 5
+    private let titleVerticalPadding: CGFloat = 5
+    private let settingViewHorizontalPadding: CGFloat = 20
     
     var buttonAction: ((ButtonType) -> Void)?
     @Binding var settings: [SettingItemUIInfoInterface]
@@ -21,54 +30,37 @@ struct CarSettingView: View {
             LazyVGrid(columns: columns) {
                 ForEach(settings.indices, id: \.self) { index in
                     let doorState = settings[index]
-                    VStack(spacing: 0) {
                         VStack(alignment: .leading, spacing: 0) {
                             HStack() {
                                 Text(doorState.title)
                                     .font(.headline)
-                                    .padding(.leading, 5)
+                                    .padding(.leading, titleLeadingPadding)
                                     .fontWeight(.bold)
                                 if let text = doorState.state.text {
                                     Divider()
                                         .background(.black)
-                                        .frame(width: 20)
+                                        .frame(width: dividerWidth)
                                     Text(text)
-                                        .font(.system(size: 12))
+                                        .font(.system(size: describeTextSize))
                                         .foregroundColor(.gray)
                                     
                                 }
                                 Spacer()
                             }
-                            .padding(.top, 5)
-                            .padding(.bottom, 5)
+                            .padding(.vertical, titleVerticalPadding)
                             
-                            if  settings[index].state is DoorStateInterface  {
-                                
-                                DoorsSettingsView(onLockedButtonTapped: {
-                                    self.buttonAction?(.lock)
-                                }, onUnlockedButtonTapped: {
-                                    self.buttonAction?(.unlock)
-                                    
-                                }, doorState: $settings[index].state)
-                            }
-                            if  settings[index].state is EngineStateInterface {
-                                EngineSettingsView(onStartedButtonTapped: {
-                                    self.buttonAction?(.start)
-                                }, onStoppedButtonTapped: {
-                                    self.buttonAction?(.stop)
-                                }, engineState: $settings[index].state)
-                                .cornerRadius(5)
-                            }
+                            SettingsButtonFactory.makeView(for: settings[index].state, buttonAction: buttonAction)
+                                                    .cornerRadius(settingItemRadius)
                         }
-                        
                         .padding(0)
-                        .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
-                    }
+                        .shadow(color: Color.black.opacity(shadowOpacity),
+                                radius: shadowRadius,
+                                x: shadowOffset.x,
+                                y: shadowOffset.y)
                 }
             }
-            .padding(.horizontal, 20)
+            .padding(.horizontal, settingViewHorizontalPadding)
         }
-        
     }
 }
     

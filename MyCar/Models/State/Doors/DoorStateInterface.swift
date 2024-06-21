@@ -9,4 +9,6 @@ import Foundation
 
 protocol DoorStateInterface: SettingItemStateInterface {
     var state: DoorStates { get }
+    var uiChangableState: DoorChangableInterface { get }
+    var uiFixedState: DoorUIFixedAttributes { get }
 }

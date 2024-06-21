@@ -9,38 +9,37 @@ import SwiftUI
 
 struct CarDescriptionView: View {
     private let car: CarDescriptionModel
+    private let uiAttibutes: CarDescrViewUIAttributes
     
-    private let styler: CarDescriptionViewStyle
+    //TODO: localizable if needed
+    private let prefix = "My"
+    private let fuel = "mi"
     
-    init(car: CarDescriptionModel, styler: CarDescriptionViewStyle = CarDescriptionViewStyle()) {
+    init(car: CarDescriptionModel, styler: CarDescrViewUIAttributes = CarDescrViewUIAttributes()) {
         self.car = car
-        self.styler = styler
+        self.uiAttibutes = styler
     }
     
     var body: some View {
         HStack(alignment: .center) {
             leftContainer
-            
             divider
-            
             rightContainer
-            
             Spacer()
-            
         }
-        .padding(0)
-        .frame(height: styler.containerHeight)
+        .padding(uiAttibutes.containerPadding)
+        .frame(height: uiAttibutes.containerHeight)
     }
     
     private var leftContainer: some View {
         HStack {
             Spacer()
-            Text("My")
-                .font(styler.carModelTextFont)
+            Text(prefix)
+                .font(uiAttibutes.carModelTextFont)
             Text(car.name)
-                .font(styler.carModelTextFont)
+                .font(uiAttibutes.carModelTextFont)
         }
-        .fontWeight(.semibold)
+        .fontWeight(uiAttibutes.carNameTextWeight)
     }
     
     private var rightContainer: some View {
@@ -48,24 +47,22 @@ struct CarDescriptionView: View {
             Image(Icon.gas.iconName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(height: styler.iconSize)
-            
+                .frame(height: uiAttibutes.iconHeight)
             Text(car.fuel)
-                .font(styler.carFuelTextFont)
-                .fontWeight(styler.carFuelTextWeight)
-            Text("mi")
-                .font(styler.carFuelTextFont)
-                .fontWeight(styler.carFuelTextWeight)
+                .font(uiAttibutes.carFuelTextFont)
+                .fontWeight(uiAttibutes.carFuelTextWeight)
+            Text(fuel)
+                .font(uiAttibutes.carFuelTextFont)
+                .fontWeight(uiAttibutes.carFuelTextWeight)
             Spacer()
         }
-        .fontWeight(.semibold)
     }
     
     private var divider: some View {
         Divider()
-            .frame(width: styler.dividerSize.width,
-                   height: styler.dividerSize.height)
-            .background(styler.dividerColor)
+            .frame(width: uiAttibutes.dividerSize.width,
+                   height: uiAttibutes.dividerSize.height)
+            .background(uiAttibutes.dividerColor)
     }
     
 }

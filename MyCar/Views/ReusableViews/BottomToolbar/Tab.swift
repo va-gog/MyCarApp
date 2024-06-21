@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Tab: Int, CaseIterable {
+enum Tab: Int, CaseIterable, TabItem {
     case home, vehicle, location, settings
 
     var title: String {

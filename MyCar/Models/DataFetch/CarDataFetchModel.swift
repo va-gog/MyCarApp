@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CarDataFetchModel: CarDataFetchServiceProtocol {
+struct CarDataFetchModel: DataFetchServiceProtocol {
     private let fetchService: DataFetchService
     
     init(fetchService: DataFetchService) {
@@ -30,9 +30,9 @@ struct CarDataFetchModel: CarDataFetchServiceProtocol {
                 let carData = try JSONSerialization.data(withJSONObject: carDict, options: [])
                 return try decoder.decode(CarModel.self, from: carData)
             }
-            throw CarFetchError.serialization
+            throw FetchError.serialization
         } catch {
-            throw CarFetchError.serialization
+            throw FetchError.serialization
         }
     }
 }

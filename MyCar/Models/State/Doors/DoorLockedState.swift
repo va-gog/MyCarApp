@@ -5,16 +5,24 @@
 //  Created by Gohar Vardanyan on 6/19/24.
 //
 
-import Foundation
+import SwiftUI
 
 struct DoorLockedState: DoorStateInterface {    
     var text: String?
     
-    //ui
-    // specificUI
-    
     var state: DoorStates {
         .locked
+    }
+    
+    var uiChangableState: DoorChangableInterface {
+        DoorUIChangableAttributes(leftButtonBackground: .black,
+                         leftButtonIconColor: .white,
+                         rightButtonBackground: .black,
+                         rightButtonIconColor: .white)
+    }
+    
+    var uiFixedState: DoorUIFixedAttributes {
+        DoorUIFixedAttributes()
     }
     
     func next() -> any SettingItemStateInterface {

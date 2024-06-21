@@ -9,6 +9,9 @@ import SwiftUI
 
 struct RefreshableView: View {
     @Binding var timeSinceLastUpdate: String?
+    
+    private let iconSize: CGFloat = 24
+    
     var body: some View {
         HStack {
                 Spacer()
@@ -17,15 +20,13 @@ struct RefreshableView: View {
                 }) {
                     Image(Icon.refresh.iconName)
                         .resizable()
-                        .frame(width: 24, height: 24)
+                        .frame(width: iconSize, height: iconSize)
                 }
                 
                 Text("Updated \(timeSinceLastUpdate ?? "") ago")
                     .font(.subheadline)
-                
                 Spacer()
         }
-        .padding()
     }
 
     private func refreshData() {

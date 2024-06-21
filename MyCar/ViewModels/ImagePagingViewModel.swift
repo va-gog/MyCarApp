@@ -8,13 +8,17 @@
 import SwiftUI
 import Combine
 
-final class ImagePagingViewModel: ObservableObject {
+final class ImagePagingViewModel: ImagePagingViewModelInterface, ObservableObject {
+    @Published var shouldShowLeftIcon: Bool = false
+    @Published var shouldShowRightIcon: Bool = false
     var currentIndex: CurrentValueSubject<Int, Never>
     
     let images: [String]
+    let pagesCount: Int
     
-    init(images: [String], currentIndex: CurrentValueSubject<Int, Never>) {
+    init(images: [String], pagesCount: Int, currentIndex: CurrentValueSubject<Int, Never>) {
         self.images = images
+        self.pagesCount = min(pagesCount, images.count)
         self.currentIndex = currentIndex
     }
     
@@ -36,4 +40,12 @@ final class ImagePagingViewModel: ObservableObject {
             return translationX
         }
     }
+    
+        private var shouldShowLeftPlus: Bool {
+            return currentIndex.value >= pagesCount && images.count > pagesCount
+        }
+    
+        private var shouldShowRightPlus: Bool {
+            return currentIndex.value < pagesCount && images.count > pagesCount
+        }
 }

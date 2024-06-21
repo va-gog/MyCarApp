@@ -9,7 +9,5 @@ import Foundation
 
 protocol SettingItemStateInterface {
     var text: String? { get }
-    //user interface setups
-    //state
     func next() -> SettingItemStateInterface
 }

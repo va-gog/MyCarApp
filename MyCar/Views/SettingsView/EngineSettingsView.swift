@@ -8,33 +8,38 @@
 import SwiftUI
 
 struct EngineSettingsView: View {
-    var onStartedButtonTapped: () -> Void
-    var onStoppedButtonTapped: () -> Void
-    
     @Binding var engineState: SettingItemStateInterface
 
+    let onStartedButtonTapped: () -> Void
+    let onStoppedButtonTapped: () -> Void
+    
     var body: some View {
-        HStack(spacing: 7) {
+        if let engineState = engineState as? EngineStateInterface {
+            HStack(spacing: engineState.uiFixedState.spacing) {
                 Spacer()
-                CustomButtonView {
-                    Text("START")
-                        .font(.system(size: 12, weight: .medium))
-                        .foregroundColor(.white)
-                } action: {
-                    onStartedButtonTapped()
-                }
+                engineButton(title: engineState.uiFixedState.leftButtonTitle,
+                             attributes: engineState.uiFixedState,
+                             foregroundColor: engineState.uiChangableState.leftButtonTextColor,
+                             backgroundColor: engineState.uiChangableState.leftButtonBackground,
+                             action: onStartedButtonTapped)
                 
-                CustomButtonView {
-                    Text("STOP")
-                        .font(.system(size: 12, weight: .medium))
-                        .foregroundColor(.white)
-                } action: {
-                    onStoppedButtonTapped()
-                }
+                engineButton(title: engineState.uiFixedState.rightButtonTitle,
+                             attributes: engineState.uiFixedState,
+                             foregroundColor: engineState.uiChangableState.rightButtonTextColor,
+                             backgroundColor: engineState.uiChangableState.rightButtonBackground,
+                             action: onStartedButtonTapped)
                 Spacer()
             }
-        .padding(.top, 15)
-        .padding(.bottom, 15)
-        .background(Color.white)
+            .padding(.vertical, engineState.uiFixedState.horizontalPadding)
+            .background(engineState.uiFixedState.backgroundColor)
+        }
+    }
+    
+    private func engineButton(title: String, attributes: EngineUIFixedAttributes, foregroundColor: Color, backgroundColor: Color, action: @escaping () -> Void) -> some View {
+        self.modifier(EngineSettingButtonModifier(title: title,
+                                         attributes: attributes,
+                                         foregroundColor: foregroundColor,
+                                         backgroundColor: backgroundColor,
+                                         action: action))
     }
 }
