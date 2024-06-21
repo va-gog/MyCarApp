@@ -27,8 +27,8 @@ struct ContentView: View {
                                                                                  currentIndex: viewModel.currentIndex),
                                                  showRefreshOverlay: $viewModel.updatedTime)
                             CarSettingView(buttonAction: { buttonType in
-                                withAnimation {
-                                    self.viewModel.buttonAction(buttonType: buttonType)
+                                withAnimation { [weak viewModel] in
+                                    viewModel?.buttonAction(buttonType: buttonType)
                                 }
                             }, settings: $viewModel.interfaceState.settingsStates)
                             
@@ -45,15 +45,15 @@ struct ContentView: View {
                                 message: "Please confirm that you want to lock the doors of “ROGUE SPT”.",
                                 leftButtonText: "Cancel",
                                 rightButtonText: "Yes, Lock",
-                                onLeftButton: {
+                                onLeftButton: { [weak viewModel] in
                                     withAnimation {
-                                        self.viewModel.showAlert = false
+                                        viewModel?.showAlert = false
                                     }
                                 },
-                                onRightButton: {
+                                onRightButton: { [weak viewModel] in
                                     withAnimation {
-                                        self.viewModel.showAlert = false
-                                        viewModel.lockIfPossible()
+                                        viewModel?.showAlert = false
+                                        viewModel?.lockIfPossible()
                                     }
                                 }
                             )

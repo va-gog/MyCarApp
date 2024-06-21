@@ -27,6 +27,8 @@ struct DoorsSettingsView: View {
                         backgroundColor: doorState.uiChangableState.leftButtonBackground,
                         action: onLockedButtonTapped
                     )
+                    .disabled(doorState.uiChangableState.leftButtonDisabled)
+
                 } else {
                     CircularLoadingView(color: doorState.uiFixedState.circleColor,
                                         lineWidth: doorState.uiFixedState.circleWidth,
@@ -41,6 +43,7 @@ struct DoorsSettingsView: View {
                     backgroundColor: doorState.uiChangableState.rightButtonBackground,
                     action: onUnlockedButtonTapped
                 )
+                .disabled(doorState.uiChangableState.rightButtonDisabled)
                 
                 Spacer()
             }

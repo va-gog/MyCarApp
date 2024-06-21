@@ -26,7 +26,6 @@ final class CarScreenViewModel: ObservableObject, CarMainScreenViewModelInterfac
         self.interfaceState = interfaceState
         self.timerManager = timerManager
         
-        //checks for lock unlock allow
        timerManager.timerCompleted.sink { [weak self] ended in
            self?.interfaceState.settingsStates.first(where:{ $0.state is DoorStateInterface} )?.changeState()
            // TODO: this value and (min, hour) must be calculated with some logic
@@ -60,7 +59,6 @@ final class CarScreenViewModel: ObservableObject, CarMainScreenViewModelInterfac
         }
     }
     
-    // check solution
     func buttonAction(buttonType: ButtonType) {
         switch buttonType {
         case .unlock:
@@ -71,7 +69,6 @@ final class CarScreenViewModel: ObservableObject, CarMainScreenViewModelInterfac
             showAlert = true
         case .stop:
             showAlert = false
-
         }
     }
     

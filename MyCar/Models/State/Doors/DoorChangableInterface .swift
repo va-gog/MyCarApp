@@ -8,8 +8,11 @@
 import SwiftUI
 
 protocol DoorChangableInterface {
+    var leftButtonDisabled: Bool { get }
     var leftButtonBackground: Color { get }
-    var rightButtonBackground: Color { get }
     var leftButtonIconColor: Color { get }
+
+    var rightButtonDisabled: Bool { get }
+    var rightButtonBackground: Color { get }
     var rightButtonIconColor: Color { get }
 }

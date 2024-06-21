@@ -28,6 +28,7 @@ final class TimerManager: TimerManagerInterface {
                 start += 1
                 if start == prefix {
                     self?.timerCompleted.send(true)
+                    self?.cancellables.removeAll()
                 }
             }
             .store(in: &cancellables)

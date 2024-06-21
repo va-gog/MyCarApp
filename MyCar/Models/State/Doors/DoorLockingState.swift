@@ -17,10 +17,12 @@ struct DoorLockingState: DoorStateInterface {
     }
     
     var uiChangableState: DoorChangableInterface {
-        DoorUIChangableAttributes(leftButtonBackground: .white,
-                         leftButtonIconColor: .white,
-                         rightButtonBackground:  Color(hex: ProjectColorSpecs.lightBrown),
-                         rightButtonIconColor: Color(hex: ProjectColorSpecs.lightBrown))
+        DoorUIChangableAttributes(leftButtonDisabled: true,
+                                  leftButtonBackground: .white,
+                                  leftButtonIconColor: .white,
+                                  rightButtonDisabled: true,
+                                  rightButtonBackground:  Color(hex: ProjectColorSpecs.lightBrown),
+                                  rightButtonIconColor: Color(hex: ProjectColorSpecs.lightBrown))
     }
     
     var uiFixedState: DoorUIFixedAttributes {
