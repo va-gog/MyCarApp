@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol ImagePagingViewModelInterface {
-    var currentIndex: CurrentValueSubject<Int, Never> { get }
+    var currentIndexSubject: CurrentValueSubject<Int, Never> { get }
     func handleGesture(translationX: CGFloat, geometryWidth: CGFloat)
     func validTranslation(translationX: CGFloat) -> CGFloat
 }

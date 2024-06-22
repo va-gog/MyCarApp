@@ -19,4 +19,11 @@ struct DoorUIFixedAttributes {
     let circleColor = Color(hex: ProjectColorSpecs.lightBrown)
     let circleWidth: CGFloat = 2
     let animationDuration: CGFloat = 1
+    
+    let alertTitle = "Are you sure?"
+    var subtitle: String {
+        "Please confirm that you want to lock the doors of your vehicle"
+    }
+    let alertApply = "Yes, Lock"
+    let alertCancel = "Cancel"
 }

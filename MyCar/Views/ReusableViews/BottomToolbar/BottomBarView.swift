@@ -62,6 +62,9 @@ struct BottomBar<T: TabItem>: View {
                         updateSelectedRect(for: tab,
                                            with: geometry)
                     }
+                    .onChange(of: UIDevice.current.orientation) { _, _ in
+                               updateSelectedRect(for: selectedTab, with: geometry)
+                           }
             })
         }
         .buttonStyle(PlainButtonStyle())

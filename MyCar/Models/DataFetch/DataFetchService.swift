@@ -7,9 +7,12 @@
 
 import Foundation
 
-/* Lets consider that this is a third part library that we use to fetch
- data and we don't have access to internal implementation */
-struct DataFetchService {
+/* For this project this function will asyncronius decode the CarData JSON,
+ but in the real project it will fetch data from server with some info -
+ for example our car.
+ The reason why I use ascyn function here is to simulate real project */
+
+struct DataFetchService: DataFetchServiceInterface {
     func fetchDataForCar(url: URL) async throws -> Data {
         do {
             return try Data(contentsOf: url)
@@ -23,4 +26,3 @@ struct DataFetchService {
         case unknown
     }
 }
-

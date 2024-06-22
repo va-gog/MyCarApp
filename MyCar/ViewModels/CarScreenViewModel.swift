@@ -8,53 +8,51 @@
 import Foundation
 import Combine
 
-final class CarScreenViewModel: ObservableObject, CarMainScreenViewModelInterface {
-    @Published var interfaceState: CarInterfaceState
+final class CarScreenViewModel: ObservableObject, CarScreenViewModelInterface {
+    @Published var interfaceState: CarInterfaceStateInterface
     @Published var fetchState: FetchState = .loading
-    @Published var showAlert = false
-    @Published var timeSinceLastUpdate = ""
+    @Published var alertViewInfo: AlertViewInfo?
     @Published var updatedTime: String?
     var currentIndex = CurrentValueSubject<Int, Never>(0)
 
-    private var fetchService: DataFetchServiceProtocol
+    private var fetchService: CarDataFetchServiceProtocol
     private var timerManager: TimerManagerInterface
-    
+    private var settingItemFactory: SettingItemFactoryInterface
     private var cancellables = Set<AnyCancellable>()
 
-    init(fetchService: DataFetchServiceProtocol, timerManager: TimerManagerInterface, interfaceState: CarInterfaceState = CarInterfaceState()) {
+    init(fetchService: CarDataFetchServiceProtocol, 
+         timerManager: TimerManagerInterface,
+         settinItemFactory: SettingItemFactoryInterface = SettingItemFactory(),
+         interfaceState: CarInterfaceStateInterface = CarInterfaceState()) {
         self.fetchService = fetchService
         self.interfaceState = interfaceState
+        self.settingItemFactory = settinItemFactory
         self.timerManager = timerManager
-        
-       timerManager.timerCompleted.sink { [weak self] ended in
-           self?.interfaceState.settingsStates.first(where:{ $0.state is DoorStateInterface} )?.changeState()
-           // TODO: this value and (min, hour) must be calculated with some logic
-           self?.updatedTime = "1 min"
-       }.store(in: &cancellables)
+        self.setupObservers()
     }
     
     func setupWithData(_ carData: CarModel) {
         interfaceState = CarInterfaceState(carDescription: CarDescriptionModel(name: carData.name,
                                                                                fuel: carData.fuel,
                                                                                imagesNames: carData.images),
-                                           settingsStates: carData.settings.allSettings().compactMap({ itemModel($0) }) )
+                                           settingsStates: carData.settings.allSettings().compactMap({ settingItemFactory.settingForModel($0) }) )
         fetchState = .finished
     }
         
-    func fetchInfoWithURL(_ url: URL?) {
+    func fetchInfoWithURL(_ url: URL?) throws {
         guard let url else {
-            fetchState = .error("Something went wrong")
-            return
+            throw FetchError.unknown
         }
         fetchState = .loading
         Task {
             do {
-                let car = try await fetchService.fetchDataForCar(url: url)
+                // TODO: Car must be replace with some real info
+                let car = try await fetchService.fetchDataFor("car", url: url)
                 Task { @MainActor in
                     setupWithData(car)
                 }
-            } catch {
-                fetchState = .error("Something went wrong")
+            } catch { let error = error as? FetchError
+                fetchState = .error(error ?? FetchError.unknown)
             }
         }
     }
@@ -62,42 +60,50 @@ final class CarScreenViewModel: ObservableObject, CarMainScreenViewModelInterfac
     func buttonAction(buttonType: ButtonType) {
         switch buttonType {
         case .unlock:
-                showAlert = true
+            unlockApplied()
         case .lock:
-            showAlert = false
+            lockDoors()
         case .start:
-            showAlert = true
+            changeEngineState()
         case .stop:
-            showAlert = false
+            changeEngineState()
+        case .apply:
+            unlockDoors()
         }
     }
     
-    func lockIfPossible() {
+    private func unlockDoors() {
         let state = interfaceState.settingsStates.first(where:{ $0.state is DoorStateInterface} )
-        guard state?.state is DoorLockedState else { return }
         state?.changeState()
         timerManager.startTimer(prefix: 5)
     }
     
-    func unlockIfPossible() {
+    private func lockDoors() {
         let state = interfaceState.settingsStates.first(where:{ $0.state is DoorStateInterface} )
-        guard state?.state is DoorLockedState else { return }
         state?.changeState()
-        timerManager.startTimer(prefix: 5)
-    }    
-    
-    private func itemModel(_ model: SettingModelProtocol) -> SettingItemUIInfoInterface? {
-        switch model {
-        case let setting as DoorModel:
-            return SettingItemUIInfo(title: setting.title,
-                                 state: setting.locked ? DoorLockedState() : DoorUnlockedState())
-            
-        case let setting as EngineModel:
-            return SettingItemUIInfo(title: setting.title,
-                                 state: setting.started ? EngineStartedState() : EngineStoppedState())
-            
-        default:
-            return nil
-        }
     }
+    
+    private func changeEngineState() {
+        let state = interfaceState.settingsStates.first(where:{ $0.state is EngineStateInterface} )
+        state?.changeState()
+    }
+    
+    private func unlockApplied() {
+        let state = interfaceState.settingsStates.first(where:{ $0.state is DoorStateInterface} )?
+            .state as? DoorStateInterface
+        alertViewInfo = AlertViewInfo(title: state?.uiFixedState.alertTitle,
+                                      subtitle: "\(state?.uiFixedState.subtitle ?? "") \(interfaceState.carDescription.name)",
+                                      apply: state?.uiFixedState.alertApply,
+                                      cancel: state?.uiFixedState.alertCancel)
+    }
+    
+    private func setupObservers() {
+        timerManager.timerCompleted.sink { [weak self] ended in
+            self?.interfaceState.settingsStates.first(where:{ $0.state is DoorStateInterface} )?.changeState()
+            // TODO: this value and (min, hour) must be calculated with some logic
+            self?.updatedTime = "1 min"
+        }.store(in: &cancellables)
+    }
+    
+
 }

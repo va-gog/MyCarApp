@@ -7,14 +7,10 @@
 
 import SwiftUI
 
-struct DoorLockingState: DoorStateInterface {
-    var text: String? {
-        "..."
-    }
-    
-    var state: DoorStates {
-        .locking
-    }
+struct DoorUnlockingState: DoorStateInterface {
+    var descriptionText: String? { "..." }
+    var state: DoorStates { .unlocking}
+    var uiFixedState: DoorUIFixedAttributes { DoorUIFixedAttributes() }
     
     var uiChangableState: DoorChangableInterface {
         DoorUIChangableAttributes(leftButtonDisabled: true,
@@ -25,11 +21,8 @@ struct DoorLockingState: DoorStateInterface {
                                   rightButtonIconColor: Color(hex: ProjectColorSpecs.lightBrown))
     }
     
-    var uiFixedState: DoorUIFixedAttributes {
-        DoorUIFixedAttributes()
-    }
     
     func next() -> any SettingItemStateInterface {
-        return DoorLockedState()
+        return DoorUnlockedState()
     }
 }

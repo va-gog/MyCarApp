@@ -36,14 +36,13 @@ struct CarSettingView: View {
                                     .font(.headline)
                                     .padding(.leading, titleLeadingPadding)
                                     .fontWeight(.bold)
-                                if let text = doorState.state.text {
+                                if let text = doorState.state.descriptionText {
                                     Divider()
                                         .background(.black)
                                         .frame(width: dividerWidth)
                                     Text(text)
                                         .font(.system(size: describeTextSize))
                                         .foregroundColor(.gray)
-                                    
                                 }
                                 Spacer()
                             }

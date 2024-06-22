@@ -8,6 +8,7 @@
 import Foundation
 
 protocol SettingItemStateInterface {
-    var text: String? { get }
+    var descriptionText: String? { get }
+    
     func next() -> SettingItemStateInterface
 }

@@ -7,18 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		492B6F2D2C270445003F39CB /* ImagePaginationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B6F2C2C270445003F39CB /* ImagePaginationManagerTests.swift */; };
+		492B6F2F2C2714CF003F39CB /* SettingItemFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B6F2E2C2714CF003F39CB /* SettingItemFactoryTests.swift */; };
+		492B6F312C27183D003F39CB /* SettingItemFactoryMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B6F302C27183D003F39CB /* SettingItemFactoryMock.swift */; };
+		492B6F332C271C38003F39CB /* SettingModelFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B6F322C271C38003F39CB /* SettingModelFake.swift */; };
+		492B6F372C271E48003F39CB /* TimeManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B6F362C271E48003F39CB /* TimeManagerTests.swift */; };
+		492B6F392C2721F6003F39CB /* FetchStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B6F382C2721F6003F39CB /* FetchStateTests.swift */; };
+		492B6F3B2C27238B003F39CB /* FetchErrorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B6F3A2C27238B003F39CB /* FetchErrorTests.swift */; };
+		492B6F3D2C272752003F39CB /* CarDataFetchServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B6F3C2C272752003F39CB /* CarDataFetchServiceTests.swift */; };
+		492B6F412C272E44003F39CB /* DataFetchServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B6F402C272E44003F39CB /* DataFetchServiceMock.swift */; };
+		492B6F452C273045003F39CB /* SettingItemUIInfoMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B6F442C273045003F39CB /* SettingItemUIInfoMock.swift */; };
+		492B6F492C2735DC003F39CB /* CarInterfaceStateFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B6F482C2735DC003F39CB /* CarInterfaceStateFake.swift */; };
+		492B6F4B2C27360E003F39CB /* DoorStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B6F4A2C27360E003F39CB /* DoorStateTests.swift */; };
+		492B6F4D2C2736F9003F39CB /* IconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B6F4C2C2736F9003F39CB /* IconTests.swift */; };
+		492B6F502C273737003F39CB /* IconNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B6F4F2C273737003F39CB /* IconNames.swift */; };
+		492B6F522C27392E003F39CB /* FetchErrorDescriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B6F512C27392E003F39CB /* FetchErrorDescriptions.swift */; };
+		492B6F542C273964003F39CB /* DataFetchServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B6F532C273964003F39CB /* DataFetchServiceInterface.swift */; };
 		494CF5382C2268F000DEA3DA /* MyCarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5372C2268F000DEA3DA /* MyCarApp.swift */; };
 		494CF53A2C2268F000DEA3DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5392C2268F000DEA3DA /* ContentView.swift */; };
 		494CF53C2C2268F100DEA3DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 494CF53B2C2268F100DEA3DA /* Assets.xcassets */; };
 		494CF53F2C2268F100DEA3DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 494CF53E2C2268F100DEA3DA /* Preview Assets.xcassets */; };
-		494CF5492C2268F100DEA3DA /* MyCarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5482C2268F100DEA3DA /* MyCarTests.swift */; };
+		494CF5492C2268F100DEA3DA /* ScreenViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5482C2268F100DEA3DA /* ScreenViewModelTests.swift */; };
 		494CF5532C2268F100DEA3DA /* MyCarUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5522C2268F100DEA3DA /* MyCarUITests.swift */; };
 		494CF5552C2268F100DEA3DA /* MyCarUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5542C2268F100DEA3DA /* MyCarUITestsLaunchTests.swift */; };
-		494CF5982C23371C00DEA3DA /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5972C23371C00DEA3DA /* Color+Extension.swift */; };
+		494CF5982C23371C00DEA3DA /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5972C23371C00DEA3DA /* ColorExtension.swift */; };
 		494CF59B2C23374500DEA3DA /* DataFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF59A2C23374500DEA3DA /* DataFetchService.swift */; };
 		494CF59D2C23402F00DEA3DA /* CarDataFetchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF59C2C23402F00DEA3DA /* CarDataFetchModel.swift */; };
 		494CF59F2C23404000DEA3DA /* FetchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF59E2C23404000DEA3DA /* FetchError.swift */; };
-		494CF5A22C23405B00DEA3DA /* DataFetchServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5A12C23405B00DEA3DA /* DataFetchServiceProtocol.swift */; };
+		494CF5A22C23405B00DEA3DA /* CarDataFetchServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5A12C23405B00DEA3DA /* CarDataFetchServiceProtocol.swift */; };
 		494CF5A52C23408D00DEA3DA /* CarScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5A42C23408D00DEA3DA /* CarScreenViewModel.swift */; };
 		494CF5AE2C2340FD00DEA3DA /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5AD2C2340FD00DEA3DA /* CarModel.swift */; };
 		494CF5B22C23412D00DEA3DA /* EngineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5B12C23412D00DEA3DA /* EngineModel.swift */; };
@@ -42,7 +58,7 @@
 		494CF5E22C234C4600DEA3DA /* CarDescriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5E12C234C4600DEA3DA /* CarDescriptionModel.swift */; };
 		494CF5E62C238FB100DEA3DA /* FetchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5E52C238FB100DEA3DA /* FetchState.swift */; };
 		494CF5E82C238FC200DEA3DA /* CarInterfaceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5E72C238FC200DEA3DA /* CarInterfaceState.swift */; };
-		494CF5EA2C238FDC00DEA3DA /* CarMainScreenViewModelInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5E92C238FDC00DEA3DA /* CarMainScreenViewModelInterface.swift */; };
+		494CF5EA2C238FDC00DEA3DA /* CarScreenViewModelInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5E92C238FDC00DEA3DA /* CarScreenViewModelInterface.swift */; };
 		494CF5EC2C23D81900DEA3DA /* ImagePagingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5EB2C23D81900DEA3DA /* ImagePagingViewModel.swift */; };
 		494CF5F02C240AA100DEA3DA /* SettingModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5EF2C240AA100DEA3DA /* SettingModelProtocol.swift */; };
 		494CF5F32C240C4100DEA3DA /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5F22C240C4100DEA3DA /* SettingsModel.swift */; };
@@ -52,7 +68,6 @@
 		494CF6092C24240400DEA3DA /* SettingItemUIInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6082C24240400DEA3DA /* SettingItemUIInfo.swift */; };
 		494CF60D2C2431F400DEA3DA /* CircularLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF60C2C2431F400DEA3DA /* CircularLoadingView.swift */; };
 		494CF60F2C2446B000DEA3DA /* SettingItemStateInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF60E2C2446B000DEA3DA /* SettingItemStateInterface.swift */; };
-		494CF6112C24704200DEA3DA /* DoorUnlockingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6102C24704200DEA3DA /* DoorUnlockingState.swift */; };
 		494CF6132C24716900DEA3DA /* ProjectColorSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6122C24716900DEA3DA /* ProjectColorSpecs.swift */; };
 		494CF6162C2480BC00DEA3DA /* EngineState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6152C2480BC00DEA3DA /* EngineState.swift */; };
 		494CF6182C24816400DEA3DA /* DoorLockingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6172C24816400DEA3DA /* DoorLockingState.swift */; };
@@ -78,6 +93,12 @@
 		494CF6502C25E49800DEA3DA /* DoorUIFixedAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF64F2C25E49800DEA3DA /* DoorUIFixedAttributes.swift */; };
 		494CF6522C25F60900DEA3DA /* EngineSettingButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6512C25F60900DEA3DA /* EngineSettingButtonModifier.swift */; };
 		494CF6542C2600C600DEA3DA /* SettingsButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6532C2600C600DEA3DA /* SettingsButtonFactory.swift */; };
+		494CF6562C261AB300DEA3DA /* TimerManagerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6552C261AB300DEA3DA /* TimerManagerInterface.swift */; };
+		494CF6582C261FE600DEA3DA /* AlertViewInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6572C261FE600DEA3DA /* AlertViewInfo.swift */; };
+		494CF6612C2684E000DEA3DA /* SettingItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6602C2684E000DEA3DA /* SettingItemFactory.swift */; };
+		494CF6632C2684FF00DEA3DA /* SettingItemFactoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6622C2684FF00DEA3DA /* SettingItemFactoryInterface.swift */; };
+		494CF6652C2690A800DEA3DA /* CarDataFetchServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6642C2690A800DEA3DA /* CarDataFetchServiceMock.swift */; };
+		494CF6672C2690D900DEA3DA /* TimerManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6662C2690D900DEA3DA /* TimerManagerMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,21 +119,37 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		492B6F2C2C270445003F39CB /* ImagePaginationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePaginationManagerTests.swift; sourceTree = "<group>"; };
+		492B6F2E2C2714CF003F39CB /* SettingItemFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemFactoryTests.swift; sourceTree = "<group>"; };
+		492B6F302C27183D003F39CB /* SettingItemFactoryMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemFactoryMock.swift; sourceTree = "<group>"; };
+		492B6F322C271C38003F39CB /* SettingModelFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModelFake.swift; sourceTree = "<group>"; };
+		492B6F362C271E48003F39CB /* TimeManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeManagerTests.swift; sourceTree = "<group>"; };
+		492B6F382C2721F6003F39CB /* FetchStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchStateTests.swift; sourceTree = "<group>"; };
+		492B6F3A2C27238B003F39CB /* FetchErrorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchErrorTests.swift; sourceTree = "<group>"; };
+		492B6F3C2C272752003F39CB /* CarDataFetchServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDataFetchServiceTests.swift; sourceTree = "<group>"; };
+		492B6F402C272E44003F39CB /* DataFetchServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetchServiceMock.swift; sourceTree = "<group>"; };
+		492B6F442C273045003F39CB /* SettingItemUIInfoMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemUIInfoMock.swift; sourceTree = "<group>"; };
+		492B6F482C2735DC003F39CB /* CarInterfaceStateFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInterfaceStateFake.swift; sourceTree = "<group>"; };
+		492B6F4A2C27360E003F39CB /* DoorStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorStateTests.swift; sourceTree = "<group>"; };
+		492B6F4C2C2736F9003F39CB /* IconTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTests.swift; sourceTree = "<group>"; };
+		492B6F4F2C273737003F39CB /* IconNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconNames.swift; sourceTree = "<group>"; };
+		492B6F512C27392E003F39CB /* FetchErrorDescriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchErrorDescriptions.swift; sourceTree = "<group>"; };
+		492B6F532C273964003F39CB /* DataFetchServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetchServiceInterface.swift; sourceTree = "<group>"; };
 		494CF5342C2268F000DEA3DA /* MyCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		494CF5372C2268F000DEA3DA /* MyCarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCarApp.swift; sourceTree = "<group>"; };
 		494CF5392C2268F000DEA3DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		494CF53B2C2268F100DEA3DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		494CF53E2C2268F100DEA3DA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		494CF5442C2268F100DEA3DA /* MyCarTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyCarTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		494CF5482C2268F100DEA3DA /* MyCarTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCarTests.swift; sourceTree = "<group>"; };
+		494CF5482C2268F100DEA3DA /* ScreenViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenViewModelTests.swift; sourceTree = "<group>"; };
 		494CF54E2C2268F100DEA3DA /* MyCarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyCarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		494CF5522C2268F100DEA3DA /* MyCarUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCarUITests.swift; sourceTree = "<group>"; };
 		494CF5542C2268F100DEA3DA /* MyCarUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCarUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		494CF5972C23371C00DEA3DA /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		494CF5972C23371C00DEA3DA /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		494CF59A2C23374500DEA3DA /* DataFetchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetchService.swift; sourceTree = "<group>"; };
 		494CF59C2C23402F00DEA3DA /* CarDataFetchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDataFetchModel.swift; sourceTree = "<group>"; };
 		494CF59E2C23404000DEA3DA /* FetchError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchError.swift; sourceTree = "<group>"; };
-		494CF5A12C23405B00DEA3DA /* DataFetchServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetchServiceProtocol.swift; sourceTree = "<group>"; };
+		494CF5A12C23405B00DEA3DA /* CarDataFetchServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDataFetchServiceProtocol.swift; sourceTree = "<group>"; };
 		494CF5A42C23408D00DEA3DA /* CarScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarScreenViewModel.swift; sourceTree = "<group>"; };
 		494CF5AD2C2340FD00DEA3DA /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
 		494CF5B12C23412D00DEA3DA /* EngineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineModel.swift; sourceTree = "<group>"; };
@@ -136,7 +173,7 @@
 		494CF5E12C234C4600DEA3DA /* CarDescriptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDescriptionModel.swift; sourceTree = "<group>"; };
 		494CF5E52C238FB100DEA3DA /* FetchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchState.swift; sourceTree = "<group>"; };
 		494CF5E72C238FC200DEA3DA /* CarInterfaceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInterfaceState.swift; sourceTree = "<group>"; };
-		494CF5E92C238FDC00DEA3DA /* CarMainScreenViewModelInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarMainScreenViewModelInterface.swift; sourceTree = "<group>"; };
+		494CF5E92C238FDC00DEA3DA /* CarScreenViewModelInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarScreenViewModelInterface.swift; sourceTree = "<group>"; };
 		494CF5EB2C23D81900DEA3DA /* ImagePagingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePagingViewModel.swift; sourceTree = "<group>"; };
 		494CF5EF2C240AA100DEA3DA /* SettingModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModelProtocol.swift; sourceTree = "<group>"; };
 		494CF5F22C240C4100DEA3DA /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
@@ -146,7 +183,6 @@
 		494CF6082C24240400DEA3DA /* SettingItemUIInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemUIInfo.swift; sourceTree = "<group>"; };
 		494CF60C2C2431F400DEA3DA /* CircularLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularLoadingView.swift; sourceTree = "<group>"; };
 		494CF60E2C2446B000DEA3DA /* SettingItemStateInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemStateInterface.swift; sourceTree = "<group>"; };
-		494CF6102C24704200DEA3DA /* DoorUnlockingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorUnlockingState.swift; sourceTree = "<group>"; };
 		494CF6122C24716900DEA3DA /* ProjectColorSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectColorSpecs.swift; sourceTree = "<group>"; };
 		494CF6152C2480BC00DEA3DA /* EngineState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineState.swift; sourceTree = "<group>"; };
 		494CF6172C24816400DEA3DA /* DoorLockingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorLockingState.swift; sourceTree = "<group>"; };
@@ -172,6 +208,12 @@
 		494CF64F2C25E49800DEA3DA /* DoorUIFixedAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorUIFixedAttributes.swift; sourceTree = "<group>"; };
 		494CF6512C25F60900DEA3DA /* EngineSettingButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineSettingButtonModifier.swift; sourceTree = "<group>"; };
 		494CF6532C2600C600DEA3DA /* SettingsButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButtonFactory.swift; sourceTree = "<group>"; };
+		494CF6552C261AB300DEA3DA /* TimerManagerInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManagerInterface.swift; sourceTree = "<group>"; };
+		494CF6572C261FE600DEA3DA /* AlertViewInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewInfo.swift; sourceTree = "<group>"; };
+		494CF6602C2684E000DEA3DA /* SettingItemFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemFactory.swift; sourceTree = "<group>"; };
+		494CF6622C2684FF00DEA3DA /* SettingItemFactoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemFactoryInterface.swift; sourceTree = "<group>"; };
+		494CF6642C2690A800DEA3DA /* CarDataFetchServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDataFetchServiceMock.swift; sourceTree = "<group>"; };
+		494CF6662C2690D900DEA3DA /* TimerManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManagerMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +241,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		492B6F2B2C270412003F39CB /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				492B6F442C273045003F39CB /* SettingItemUIInfoMock.swift */,
+				494CF6662C2690D900DEA3DA /* TimerManagerMock.swift */,
+				492B6F482C2735DC003F39CB /* CarInterfaceStateFake.swift */,
+				492B6F302C27183D003F39CB /* SettingItemFactoryMock.swift */,
+				494CF6642C2690A800DEA3DA /* CarDataFetchServiceMock.swift */,
+				492B6F322C271C38003F39CB /* SettingModelFake.swift */,
+				492B6F402C272E44003F39CB /* DataFetchServiceMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		492B6F4E2C273724003F39CB /* Icon */ = {
+			isa = PBXGroup;
+			children = (
+				494CF5BC2C23418D00DEA3DA /* Icons.swift */,
+				492B6F4F2C273737003F39CB /* IconNames.swift */,
+			);
+			path = Icon;
+			sourceTree = "<group>";
+		};
 		494CF52B2C2268F000DEA3DA = {
 			isa = PBXGroup;
 			children = (
@@ -245,7 +310,16 @@
 		494CF5472C2268F100DEA3DA /* MyCarTests */ = {
 			isa = PBXGroup;
 			children = (
-				494CF5482C2268F100DEA3DA /* MyCarTests.swift */,
+				492B6F2E2C2714CF003F39CB /* SettingItemFactoryTests.swift */,
+				492B6F362C271E48003F39CB /* TimeManagerTests.swift */,
+				492B6F3A2C27238B003F39CB /* FetchErrorTests.swift */,
+				492B6F382C2721F6003F39CB /* FetchStateTests.swift */,
+				492B6F3C2C272752003F39CB /* CarDataFetchServiceTests.swift */,
+				494CF5482C2268F100DEA3DA /* ScreenViewModelTests.swift */,
+				492B6F2C2C270445003F39CB /* ImagePaginationManagerTests.swift */,
+				492B6F4A2C27360E003F39CB /* DoorStateTests.swift */,
+				492B6F4C2C2736F9003F39CB /* IconTests.swift */,
+				492B6F2B2C270412003F39CB /* Mocks */,
 			);
 			path = MyCarTests;
 			sourceTree = "<group>";
@@ -262,11 +336,13 @@
 		494CF5992C23373300DEA3DA /* DataFetch */ = {
 			isa = PBXGroup;
 			children = (
-				494CF5E52C238FB100DEA3DA /* FetchState.swift */,
 				494CF59A2C23374500DEA3DA /* DataFetchService.swift */,
+				492B6F532C273964003F39CB /* DataFetchServiceInterface.swift */,
 				494CF59C2C23402F00DEA3DA /* CarDataFetchModel.swift */,
+				494CF5A12C23405B00DEA3DA /* CarDataFetchServiceProtocol.swift */,
+				494CF5E52C238FB100DEA3DA /* FetchState.swift */,
 				494CF59E2C23404000DEA3DA /* FetchError.swift */,
-				494CF5A12C23405B00DEA3DA /* DataFetchServiceProtocol.swift */,
+				492B6F512C27392E003F39CB /* FetchErrorDescriptions.swift */,
 			);
 			path = DataFetch;
 			sourceTree = "<group>";
@@ -275,11 +351,10 @@
 			isa = PBXGroup;
 			children = (
 				494CF5A42C23408D00DEA3DA /* CarScreenViewModel.swift */,
-				494CF5EB2C23D81900DEA3DA /* ImagePagingViewModel.swift */,
-				494CF6342C25AD6C00DEA3DA /* ImagePagingViewModelInterface.swift */,
-				494CF5E92C238FDC00DEA3DA /* CarMainScreenViewModelInterface.swift */,
+				494CF5E92C238FDC00DEA3DA /* CarScreenViewModelInterface.swift */,
 				494CF5E72C238FC200DEA3DA /* CarInterfaceState.swift */,
-				494CF6222C24BEA300DEA3DA /* TimerManager.swift */,
+				494CF6572C261FE600DEA3DA /* AlertViewInfo.swift */,
+				494CF65F2C2684BB00DEA3DA /* Services */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -325,7 +400,6 @@
 				494CF6432C25CCF100DEA3DA /* DoorChangableInterface .swift */,
 				494CF6452C25DFAE00DEA3DA /* DoorUIChangableAttributes.swift */,
 				494CF64F2C25E49800DEA3DA /* DoorUIFixedAttributes.swift */,
-				494CF6102C24704200DEA3DA /* DoorUnlockingState.swift */,
 				494CF5B62C23415B00DEA3DA /* DoorLockedState.swift */,
 				494CF6172C24816400DEA3DA /* DoorLockingState.swift */,
 				494CF5BA2C23417A00DEA3DA /* DoorUnlockedState.swift */,
@@ -337,11 +411,11 @@
 			isa = PBXGroup;
 			children = (
 				494CF5392C2268F000DEA3DA /* ContentView.swift */,
-				494CF5C92C23421400DEA3DA /* ImagesCollectionView.swift */,
-				494CF5CD2C23422D00DEA3DA /* UpdateInfoView.swift */,
 				494CF6012C2421FB00DEA3DA /* DescriptionView */,
 				494CF63A2C25B5F000DEA3DA /* ReusableViews */,
 				494CF6002C2421CB00DEA3DA /* SettingsView */,
+				494CF5C92C23421400DEA3DA /* ImagesCollectionView.swift */,
+				494CF5CD2C23422D00DEA3DA /* UpdateInfoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -407,8 +481,8 @@
 		494CF6142C2472C300DEA3DA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				494CF5BC2C23418D00DEA3DA /* Icons.swift */,
-				494CF5972C23371C00DEA3DA /* Color+Extension.swift */,
+				492B6F4E2C273724003F39CB /* Icon */,
+				494CF5972C23371C00DEA3DA /* ColorExtension.swift */,
 				494CF6122C24716900DEA3DA /* ProjectColorSpecs.swift */,
 			);
 			path = Helpers;
@@ -445,6 +519,19 @@
 				494CF5CF2C23423900DEA3DA /* BottomToolbar */,
 			);
 			path = ReusableViews;
+			sourceTree = "<group>";
+		};
+		494CF65F2C2684BB00DEA3DA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				494CF6342C25AD6C00DEA3DA /* ImagePagingViewModelInterface.swift */,
+				494CF5EB2C23D81900DEA3DA /* ImagePagingViewModel.swift */,
+				494CF6622C2684FF00DEA3DA /* SettingItemFactoryInterface.swift */,
+				494CF6602C2684E000DEA3DA /* SettingItemFactory.swift */,
+				494CF6552C261AB300DEA3DA /* TimerManagerInterface.swift */,
+				494CF6222C24BEA300DEA3DA /* TimerManager.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -578,22 +665,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				494CF5A22C23405B00DEA3DA /* DataFetchServiceProtocol.swift in Sources */,
+				494CF5A22C23405B00DEA3DA /* CarDataFetchServiceProtocol.swift in Sources */,
 				494CF5B42C23413900DEA3DA /* DoorModel.swift in Sources */,
 				494CF6502C25E49800DEA3DA /* DoorUIFixedAttributes.swift in Sources */,
 				494CF60D2C2431F400DEA3DA /* CircularLoadingView.swift in Sources */,
 				494CF6422C25BF2400DEA3DA /* AlertButtonModifier.swift in Sources */,
 				494CF5F02C240AA100DEA3DA /* SettingModelProtocol.swift in Sources */,
+				492B6F522C27392E003F39CB /* FetchErrorDescriptions.swift in Sources */,
 				494CF6462C25DFAE00DEA3DA /* DoorUIChangableAttributes.swift in Sources */,
 				494CF5FD2C24212E00DEA3DA /* DoorsSettingsView.swift in Sources */,
 				494CF5C82C23420700DEA3DA /* ButtonType.swift in Sources */,
 				494CF60F2C2446B000DEA3DA /* SettingItemStateInterface.swift in Sources */,
 				494CF6052C24233000DEA3DA /* SettingItemUIInfoInterface.swift in Sources */,
+				492B6F542C273964003F39CB /* DataFetchServiceInterface.swift in Sources */,
 				494CF6542C2600C600DEA3DA /* SettingsButtonFactory.swift in Sources */,
 				494CF53A2C2268F000DEA3DA /* ContentView.swift in Sources */,
 				494CF6232C24BEA300DEA3DA /* TimerManager.swift in Sources */,
 				494CF6372C25AE4200DEA3DA /* AlertTitleUIAttributes.swift in Sources */,
-				494CF5982C23371C00DEA3DA /* Color+Extension.swift in Sources */,
+				494CF5982C23371C00DEA3DA /* ColorExtension.swift in Sources */,
 				494CF5B72C23415B00DEA3DA /* DoorLockedState.swift in Sources */,
 				494CF61F2C249F8A00DEA3DA /* DoorStateInterface.swift in Sources */,
 				494CF6522C25F60900DEA3DA /* EngineSettingButtonModifier.swift in Sources */,
@@ -603,23 +692,26 @@
 				494CF6092C24240400DEA3DA /* SettingItemUIInfo.swift in Sources */,
 				494CF5D12C23426000DEA3DA /* BottomBarView.swift in Sources */,
 				494CF62C2C258E1700DEA3DA /* PaginationViewUIAttributes.swift in Sources */,
+				494CF6582C261FE600DEA3DA /* AlertViewInfo.swift in Sources */,
 				494CF5CE2C23422D00DEA3DA /* UpdateInfoView.swift in Sources */,
 				494CF6442C25CCF100DEA3DA /* DoorChangableInterface .swift in Sources */,
+				492B6F502C273737003F39CB /* IconNames.swift in Sources */,
 				494CF59B2C23374500DEA3DA /* DataFetchService.swift in Sources */,
 				494CF5B22C23412D00DEA3DA /* EngineModel.swift in Sources */,
+				494CF6632C2684FF00DEA3DA /* SettingItemFactoryInterface.swift in Sources */,
 				494CF62A2C258DFE00DEA3DA /* MoreIconModifer.swift in Sources */,
 				494CF5382C2268F000DEA3DA /* MyCarApp.swift in Sources */,
 				494CF5AE2C2340FD00DEA3DA /* CarModel.swift in Sources */,
-				494CF5EA2C238FDC00DEA3DA /* CarMainScreenViewModelInterface.swift in Sources */,
+				494CF5EA2C238FDC00DEA3DA /* CarScreenViewModelInterface.swift in Sources */,
 				494CF64A2C25E00000DEA3DA /* EngineUIChangableAttributes.swift in Sources */,
 				494CF5FB2C24210E00DEA3DA /* EngineSettingsView.swift in Sources */,
 				494CF6132C24716900DEA3DA /* ProjectColorSpecs.swift in Sources */,
 				494CF64E2C25E42000DEA3DA /* EngineUIFixedAttributes.swift in Sources */,
 				494CF6302C259C1D00DEA3DA /* TabItemProtocol.swift in Sources */,
 				494CF59F2C23404000DEA3DA /* FetchError.swift in Sources */,
+				494CF6612C2684E000DEA3DA /* SettingItemFactory.swift in Sources */,
 				494CF63E2C25B81D00DEA3DA /* AlertButtonUIAttributes.swift in Sources */,
 				494CF64C2C25E2C600DEA3DA /* DoorSettingsViewModifier.swift in Sources */,
-				494CF6112C24704200DEA3DA /* DoorUnlockingState.swift in Sources */,
 				494CF5A52C23408D00DEA3DA /* CarScreenViewModel.swift in Sources */,
 				494CF5C22C2341D200DEA3DA /* CarDescrViewUIAttributes.swift in Sources */,
 				494CF6482C25DFEA00DEA3DA /* EngineChangableInterface.swift in Sources */,
@@ -643,6 +735,7 @@
 				494CF5E22C234C4600DEA3DA /* CarDescriptionModel.swift in Sources */,
 				494CF6182C24816400DEA3DA /* DoorLockingState.swift in Sources */,
 				494CF6352C25AD6C00DEA3DA /* ImagePagingViewModelInterface.swift in Sources */,
+				494CF6562C261AB300DEA3DA /* TimerManagerInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -650,7 +743,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				494CF5492C2268F100DEA3DA /* MyCarTests.swift in Sources */,
+				492B6F412C272E44003F39CB /* DataFetchServiceMock.swift in Sources */,
+				494CF5492C2268F100DEA3DA /* ScreenViewModelTests.swift in Sources */,
+				492B6F2D2C270445003F39CB /* ImagePaginationManagerTests.swift in Sources */,
+				492B6F2F2C2714CF003F39CB /* SettingItemFactoryTests.swift in Sources */,
+				492B6F392C2721F6003F39CB /* FetchStateTests.swift in Sources */,
+				492B6F492C2735DC003F39CB /* CarInterfaceStateFake.swift in Sources */,
+				492B6F4D2C2736F9003F39CB /* IconTests.swift in Sources */,
+				494CF6652C2690A800DEA3DA /* CarDataFetchServiceMock.swift in Sources */,
+				492B6F312C27183D003F39CB /* SettingItemFactoryMock.swift in Sources */,
+				494CF6672C2690D900DEA3DA /* TimerManagerMock.swift in Sources */,
+				492B6F3D2C272752003F39CB /* CarDataFetchServiceTests.swift in Sources */,
+				492B6F452C273045003F39CB /* SettingItemUIInfoMock.swift in Sources */,
+				492B6F4B2C27360E003F39CB /* DoorStateTests.swift in Sources */,
+				492B6F3B2C27238B003F39CB /* FetchErrorTests.swift in Sources */,
+				492B6F372C271E48003F39CB /* TimeManagerTests.swift in Sources */,
+				492B6F332C271C38003F39CB /* SettingModelFake.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,11 +8,6 @@
 import SwiftUI
 import Combine
 
-protocol TimerManagerInterface {
-    var timerCompleted: PassthroughSubject<Bool, Never> { get }
-    func startTimer(prefix: Int)
-}
-
 final class TimerManager: TimerManagerInterface {
     var timerCompleted = PassthroughSubject<Bool, Never>()
 

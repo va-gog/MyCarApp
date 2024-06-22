@@ -14,15 +14,15 @@ enum Icon: String {
     case gas
     
     var iconName: String {
-        return  switch self {
+        switch self {
         case .locked:
-            "act_lock"
+            return IconNames.locked
         case .unlocked:
-            "act_unlock"
+            return IconNames.unlocked
         case .refresh:
-            "btn_refresh"
+            return IconNames.refresh
         case .gas:
-            "notif_gas"
+            return IconNames.gas
         }
     }
 }

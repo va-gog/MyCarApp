@@ -8,13 +8,9 @@
 import SwiftUI
 
 struct DoorUnlockedState: DoorStateInterface {
-    var text: String? {
-        "Unlocked"
-    }
-    
-    var state: DoorStates {
-        .unlocked
-    }
+    var descriptionText: String? { "Unlocked" }
+    var state: DoorStates { .unlocked }
+    var uiFixedState: DoorUIFixedAttributes { DoorUIFixedAttributes() }
     
     var uiChangableState: DoorChangableInterface {
         DoorUIChangableAttributes(leftButtonDisabled: false,
@@ -25,11 +21,7 @@ struct DoorUnlockedState: DoorStateInterface {
                                   rightButtonIconColor: .white)
     }
     
-    var uiFixedState: DoorUIFixedAttributes {
-        DoorUIFixedAttributes()
-    }
-    
     func next() -> any SettingItemStateInterface {
-        return DoorLockingState()
+        return DoorLockedState()
     }
 }

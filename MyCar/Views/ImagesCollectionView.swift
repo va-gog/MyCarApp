@@ -9,9 +9,8 @@ import SwiftUI
 
 struct ImagesCollectionView: View {
     @ObservedObject var viewModel: ImagePagingViewModel
-    
-    @GestureState private var translation: CGFloat = 0
     @Binding var showRefreshOverlay: String?
+    @GestureState private var translation: CGFloat = 0
     
     private let imageHeight: CGFloat = 255
     private let paginationViewBottomInset: CGFloat = -15
@@ -23,18 +22,19 @@ struct ImagesCollectionView: View {
                 HStack(spacing: 0) {
                     ForEach(viewModel.images.indices, id: \.self) { index in
                         imageForIndex(index)
-                            .frame(width: geometry.size.width, height: imageHeight)
+                            .frame(width: geometry.size.width)
+                            .frame(maxHeight: imageHeight)
                     }
                 }
                 .frame(width: geometry.size.width * CGFloat(viewModel.images.count),
                        alignment: .leading)
-                .offset(x: -CGFloat(viewModel.currentIndex.value) * geometry.size.width)
+                .offset(x: -CGFloat(viewModel.currentIndexSubject.value) * geometry.size.width)
                 .offset(x: viewModel.validTranslation(translationX: translation))
                 .animation(.interactiveSpring(),
-                           value: viewModel.currentIndex.value)
-                .gesture(dragGesture(geometry: geometry))
+                           value: viewModel.currentIndexSubject.value)
             }
-            .frame(height: imageHeight)
+
+            .frame(maxHeight: imageHeight)
             .overlay(paginationOverlay,
                      alignment: .bottom)
             .overlay(
@@ -45,19 +45,25 @@ struct ImagesCollectionView: View {
                 alignment: .top
             )
         }
+        .background(Color.clear) // Make the entire ZStack interactive
+                .contentShape(Rectangle()) 
+        .gesture(dragGesture())
+
     }
     
     private func imageForIndex(_ index: Int) -> some View {
         Image(viewModel.images[index],
               bundle: nil)
         .resizable()
-        .scaledToFill()
+        .padding(.horizontal, 15)
+        .padding(.vertical, 15)
+        .scaledToFit()
         .clipped()
     }
     
     private var paginationOverlay: some View {
         PaginationView(
-            selectedIndex: $viewModel.currentIndex.value,
+            selectedIndex: $viewModel.selectedIndex,
             shouldShowLeftPlus: $viewModel.shouldShowLeftIcon,
             shouldShowRightPlus: $viewModel.shouldShowRightIcon,
             pagesCount: viewModel.pagesCount)
@@ -71,13 +77,13 @@ struct ImagesCollectionView: View {
             .offset(y: updateViewTopInset)
     }
     
-    private func dragGesture(geometry: GeometryProxy) -> some Gesture {
+    private func dragGesture() -> some Gesture {
         DragGesture()
             .updating(self.$translation) { value, state, _ in
                 state = value.translation.width
             }
             .onEnded { value in
-                viewModel.handleGesture(translationX: value.translation.width, geometryWidth: geometry.size.width)
+                viewModel.handleGesture(translationX: value.translation.width, geometryWidth: UIScreen.main.bounds.width)
             }
     }
 }

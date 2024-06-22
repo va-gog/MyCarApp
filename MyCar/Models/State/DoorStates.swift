@@ -10,6 +10,5 @@ import Foundation
 enum DoorStates {
     case locked
     case unlocked
-    case locking
     case unlocking
 }

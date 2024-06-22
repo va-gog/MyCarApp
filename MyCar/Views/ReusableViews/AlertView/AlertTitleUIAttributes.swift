@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AlertTitleUIAttributes {
-    let leadingPadding: CGFloat = 30
+    let horizontalPadding: CGFloat = 30
     let alignment = Alignment.leading
     
     let fontSize: Font

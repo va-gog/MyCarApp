@@ -12,20 +12,30 @@ struct ContentView: View {
     private let carDataURL = Bundle.main.url(forResource: "CarData", withExtension: "json")
     @State private var showModal = false
     
+    private let backgroundColor = Color(hex: ProjectColorSpecs.lightGray).opacity(0.5)
+    private let overlayBackground = Color.black.opacity(0.5)
+    private let opacity: CGFloat = 0.5
+    private let verticalSpaceing: CGFloat = 0
+    private let paginationCount = 3
+    private let progressViewText = "Loading..."
+    
     var body: some View {
         ZStack(alignment: .top, content: {
             switch viewModel.fetchState {
             case .loading:
-                ProgressView("Loading...")
+                ProgressView(progressViewText)
             case .finished:
-                Color.init(hex: 0xE5E5E5).opacity(0.5)
+                backgroundColor
                     .overlay {
-                        VStack(spacing: 0) {
+                        VStack(spacing: verticalSpaceing) {
                             CarDescriptionView(car: viewModel.interfaceState.carDescription)
                                 .background(.white)
-                            ImagesCollectionView(viewModel: ImagePagingViewModel(images: viewModel.interfaceState.carDescription.imagesNames, pagesCount: 3,
-                                                                                 currentIndex: viewModel.currentIndex),
+                            
+                            ImagesCollectionView(viewModel: ImagePagingViewModel(images: viewModel.interfaceState.carDescription.imagesNames,
+                                                                                 pagesCount: paginationCount,
+                                                                                 currentIndexSubject: viewModel.currentIndex),
                                                  showRefreshOverlay: $viewModel.updatedTime)
+                            
                             CarSettingView(buttonAction: { buttonType in
                                 withAnimation { [weak viewModel] in
                                     viewModel?.buttonAction(buttonType: buttonType)
@@ -33,44 +43,45 @@ struct ContentView: View {
                             }, settings: $viewModel.interfaceState.settingsStates)
                             
                             Spacer()
+                            
                             BottomBar<Tab>(selectedTab: .home, onTab: {_ in }).background(.white)
                         }
-                        if viewModel.showAlert {
-                            Color.black.opacity(0.5)
+                        if let alertInfo = viewModel.alertViewInfo {
+                            overlayBackground
                                 .edgesIgnoringSafeArea(.all)
                             
                             AlertView(
                                 showModal: $showModal,
-                                title: "Are you sure?",
-                                message: "Please confirm that you want to lock the doors of “ROGUE SPT”.",
-                                leftButtonText: "Cancel",
-                                rightButtonText: "Yes, Lock",
+                                title: alertInfo.title ?? "",
+                                message: "\(alertInfo.subtitle ?? "")",
+                                leftButtonText: alertInfo.cancel ?? "",
+                                rightButtonText: alertInfo.apply ?? "",
                                 onLeftButton: { [weak viewModel] in
                                     withAnimation {
-                                        viewModel?.showAlert = false
+                                        viewModel?.alertViewInfo = nil
                                     }
                                 },
                                 onRightButton: { [weak viewModel] in
                                     withAnimation {
-                                        viewModel?.showAlert = false
-                                        viewModel?.lockIfPossible()
+                                        viewModel?.alertViewInfo = nil
+                                        viewModel?.buttonAction(buttonType: .apply)
                                     }
                                 }
                             )
                             .transition(.opacity)
-                            .animation(.easeInOut, value: viewModel.showAlert)
+                            .animation(.easeInOut, value: viewModel.alertViewInfo)
                             .zIndex(1)
                         }
                     }
                 
                 
-            case .error(let message):
-                Text(message)
+            case .error(let error):
+                Text(error.description)
                     .foregroundColor(.red)
             }
         })
         .onAppear {
-            viewModel.fetchInfoWithURL(carDataURL)
+           try? viewModel.fetchInfoWithURL(carDataURL)
         }
     }
 }

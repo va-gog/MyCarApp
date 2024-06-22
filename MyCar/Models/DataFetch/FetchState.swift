@@ -7,8 +7,21 @@
 
 import Foundation
 
-enum FetchState {
+enum FetchState: Equatable {
     case loading
     case finished
-    case error(String)
+    case error(FetchError)
+    
+    static func == (lhs: FetchState, rhs: FetchState) -> Bool {
+            switch (lhs, rhs) {
+            case (.loading, .loading):
+                return true
+            case (.finished, .finished):
+                return true
+            case (.error(let lhsError), .error(let rhsError)):
+                return lhsError == rhsError
+            default:
+                return false
+            }
+        }
 }

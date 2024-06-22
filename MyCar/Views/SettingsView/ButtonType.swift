@@ -12,4 +12,5 @@ enum ButtonType {
     case unlock
     case start
     case stop
+    case apply
 }

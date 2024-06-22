@@ -8,21 +8,15 @@
 import SwiftUI
 
 struct EngineStoppedState: EngineStateInterface {
-    var text: String?
+    var descriptionText: String?
+    var state: EngineState { .stopped }
+    var uiFixedState: EngineUIFixedAttributes { EngineUIFixedAttributes() }
 
     var uiChangableState: EngineChangableInterface {
         EngineUIChangableAttributes(leftButtonBackground: .black,
                            leftButtonTextColor: .black,
                            rightButtonBackground: .white,
                            rightButtonTextColor: .white)
-    }
-    
-    var uiFixedState: EngineUIFixedAttributes {
-        EngineUIFixedAttributes()
-    }
-    
-    var state: EngineState {
-        .stopped
     }
     
     func next() -> any SettingItemStateInterface {

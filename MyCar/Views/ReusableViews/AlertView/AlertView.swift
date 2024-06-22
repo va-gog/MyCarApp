@@ -51,7 +51,7 @@ struct AlertView: View {
                 .multilineTextAlignment(uiAttributes.titleAttributes.textAlignment)
                 .padding(.top, uiAttributes.titleAttributes.textTopPadding)
         }
-        .padding(.leading, uiAttributes.titleAttributes.leadingPadding)
+        .padding(.leading, uiAttributes.titleAttributes.horizontalPadding)
         .frame(maxWidth: .infinity, alignment: uiAttributes.titleAttributes.alignment)
     }
     
@@ -62,7 +62,7 @@ struct AlertView: View {
                 .foregroundColor(uiAttributes.subtitleAttributes.textColor)
                 .multilineTextAlignment(uiAttributes.subtitleAttributes.textAlignment)
         }
-        .padding(.leading, uiAttributes.subtitleAttributes.leadingPadding)
+        .padding(.horizontal, uiAttributes.subtitleAttributes.horizontalPadding)
         .frame(maxWidth: .infinity, alignment: uiAttributes.subtitleAttributes.alignment)
     }
     

@@ -17,9 +17,8 @@ struct DoorsSettingsView: View {
         if let doorState = doorState as? DoorStateInterface {
             HStack(spacing: 7) {
                 Spacer()
-                let isInProgress = doorState.state == .locking || doorState.state == .unlocking
                 
-                if !isInProgress {
+                if doorState.state != .unlocking {
                     doorButton(
                         icon: doorState.uiFixedState.leftIcon,
                         attributes: doorState.uiFixedState,

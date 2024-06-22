@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol DataFetchServiceProtocol {
-    func fetchDataForCar(url: URL) async throws -> CarModel
+protocol CarDataFetchServiceProtocol {
+    func fetchDataFor(_ item: String, url: URL) async throws -> CarModel
 }

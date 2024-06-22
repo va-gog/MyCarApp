@@ -1,5 +1,5 @@
 //
-//  Color+Extension.swift
+//  ColorExtension.swift
 //  BottomBar
 //
 //  Created by Gohar Vardanyan on 6/19/24.
