@@ -14,7 +14,7 @@ struct DoorUnlockedState: DoorStateInterface {
     
     var uiChangableState: DoorChangableInterface {
         DoorUIChangableAttributes(leftButtonDisabled: false,
-                                  leftButtonBackground: Color(hex: ProjectColorSpecs.lightBrown),
+                                  leftButtonBackground: HexColorSpec.lightBrown,
                                   leftButtonIconColor: .white,
                                   rightButtonDisabled: true,
                                   rightButtonBackground: .black,

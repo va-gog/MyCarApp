@@ -1,5 +1,9 @@
 //
+<<<<<<<< Updated upstream:MyCar/Views/DescriptionView/CarDescrViewUIAttributes.swift
 //  CarDescrViewUIAttributes.swift
+========
+//  CarDescriptionViewStyle.swift
+>>>>>>>> Stashed changes:MyCar/Views/DescriptionView/CarDescriptionViewStyle.swift
 //  BottomBar
 //
 //  Created by Gohar Vardanyan on 6/19/24.
@@ -11,7 +15,7 @@ struct CarDescrViewUIAttributes {
     let containerPadding: CGFloat = 0
     let containerHeight: CGFloat = 60
 
-    let dividerColor = HexColorSpec.lightBrown
+    let dividerColor = Color(hex: 0xA66A53)
     let dividerSize = CGSize(width: 2, height: 30)
 
     let carNameTextWeight = Font.Weight.semibold

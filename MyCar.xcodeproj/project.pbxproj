@@ -481,9 +481,8 @@
 		494CF6142C2472C300DEA3DA /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				49DA2FCF2C2806F300E6EE4C /* Color */,
 				492B6F4E2C273724003F39CB /* Icon */,
-				494CF5972C23371C00DEA3DA /* ColorExtension.swift */,
-				494CF6122C24716900DEA3DA /* ProjectColorSpecs.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -532,6 +531,15 @@
 				494CF6222C24BEA300DEA3DA /* TimerManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		49DA2FCF2C2806F300E6EE4C /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				494CF5972C23371C00DEA3DA /* ColorExtension.swift */,
+				494CF6122C24716900DEA3DA /* ProjectColorSpecs.swift */,
+			);
+			path = Color;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

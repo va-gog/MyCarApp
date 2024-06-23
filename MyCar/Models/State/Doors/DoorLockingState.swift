@@ -17,8 +17,8 @@ struct DoorUnlockingState: DoorStateInterface {
                                   leftButtonBackground: .white,
                                   leftButtonIconColor: .white,
                                   rightButtonDisabled: true,
-                                  rightButtonBackground:  Color(hex: ProjectColorSpecs.lightBrown),
-                                  rightButtonIconColor: Color(hex: ProjectColorSpecs.lightBrown))
+                                  rightButtonBackground:  HexColorSpec.lightBrown,
+                                  rightButtonIconColor: HexColorSpec.lightBrown)
     }
     
     

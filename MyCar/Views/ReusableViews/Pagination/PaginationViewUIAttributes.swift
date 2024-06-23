@@ -13,6 +13,6 @@ struct PaginationViewUIAttributes {
     let rectangleHeight: CGFloat = 2
     let spacing: CGFloat = 10
     let animationDuration: Double = 0.3
-    let selectedColor = Color(hex: ProjectColorSpecs.lightBrown)
+    let selectedColor = HexColorSpec.lightBrown
     let deselectedColor = Color.gray
 }

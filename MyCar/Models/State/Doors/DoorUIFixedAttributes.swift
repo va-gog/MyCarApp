@@ -16,7 +16,7 @@ struct DoorUIFixedAttributes {
 
     let iconSize = CGSize(width: 40, height: 40)
     
-    let circleColor = Color(hex: ProjectColorSpecs.lightBrown)
+    let circleColor = HexColorSpec.lightBrown
     let circleWidth: CGFloat = 2
     let animationDuration: CGFloat = 1
     
