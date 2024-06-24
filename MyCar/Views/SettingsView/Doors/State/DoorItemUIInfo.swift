@@ -33,7 +33,7 @@ struct DoorItemUIInfo: DoorItemUIInfoInterface {
                                  rightButtonIconColor: .white)
         case .locked:
             DoorUIChangableTheme(leftButtonDisabled: false,
-                                      leftButtonBackground: HexColorSpec.lightBrown,
+                                      leftButtonBackground: ColorSpec.lightBrown,
                                       leftButtonIconColor: .white,
                                       rightButtonDisabled: true,
                                       rightButtonBackground: .black,
@@ -43,8 +43,8 @@ struct DoorItemUIInfo: DoorItemUIInfoInterface {
                                       leftButtonBackground: .white,
                                       leftButtonIconColor: .white,
                                       rightButtonDisabled: true,
-                                      rightButtonBackground:  HexColorSpec.lightBrown,
-                                      rightButtonIconColor: HexColorSpec.lightBrown)
+                                      rightButtonBackground:  ColorSpec.lightBrown,
+                                      rightButtonIconColor: ColorSpec.lightBrown)
         }
     }
        

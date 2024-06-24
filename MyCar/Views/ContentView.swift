@@ -12,7 +12,7 @@ struct ContentView: View {
     private let carDataURL = Bundle.main.url(forResource: "CarData", withExtension: "json")
     @State private var showModal = false
     
-    private let backgroundColor = HexColorSpec.lightGray.opacity(0.5)
+    private let backgroundColor = ColorSpec.lightGray.opacity(0.5)
     private let overlayBackground = Color.black.opacity(0.5)
     private let opacity: CGFloat = 0.5
     private let verticalSpaceing: CGFloat = 0

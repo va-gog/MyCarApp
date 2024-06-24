@@ -11,7 +11,7 @@ struct CarDescrViewUIAttributes {
     let containerPadding: CGFloat = 0
     let containerHeight: CGFloat = 60
 
-    let dividerColor = HexColorSpec.lightBrown
+    let dividerColor = ColorSpec.lightBrown
     let dividerSize = CGSize(width: 2, height: 30)
 
     let carNameTextWeight = Font.Weight.semibold

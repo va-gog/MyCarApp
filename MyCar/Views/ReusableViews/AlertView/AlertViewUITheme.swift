@@ -18,7 +18,7 @@ struct AlertViewUITheme {
     let titleAttributes = AlertTitleUITheme(fontSize: Font.system(size: 18),
                                                  textColor: .black)
     let subtitleAttributes = AlertTitleUITheme(fontSize: Font.system(size: 12),
-                                                    textColor: HexColorSpec.darkGray)
+                                                    textColor: ColorSpec.darkGray)
     let leftButtonAttributes = AlertButtonUITheme(background: .white,
                                                        textForegroundColor: .blue)
     let rightButtonAttributes = AlertButtonUITheme(background: .blue,

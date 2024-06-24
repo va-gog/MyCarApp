@@ -10,11 +10,11 @@ import Foundation
 struct DoorUIFixedTheme {
     let leftIcon = Icon.locked.iconName
     let rightIcon = Icon.unlocked.iconName
-    let backgroundColor = HexColorSpec.white
+    let backgroundColor = ColorSpec.white
     let horizontalPadding: CGFloat = 15
     let spacing: CGFloat = 7
     
-    let circleColor = HexColorSpec.lightBrown
+    let circleColor = ColorSpec.lightBrown
     let circleWidth: CGFloat = 2
     let animationDuration: CGFloat = 1
     

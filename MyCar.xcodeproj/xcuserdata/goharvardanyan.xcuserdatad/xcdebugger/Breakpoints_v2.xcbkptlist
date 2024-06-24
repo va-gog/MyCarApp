@@ -7,23 +7,87 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "ACAEDFB0-87F6-479B-B8D6-3999CEC6FE3C"
+            uuid = "5B703FBB-931D-4DC6-8A9D-3273CCF15E81"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MyCar/ViewModels/CarScreenViewModel.swift"
+            filePath = "MyCarTests/ScreenViewModelTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
-            landmarkName = "changeDoorsState()"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "testLockButtonClickedUpdatesInterfaceState()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "03D3CE2C-4B34-4BF9-B645-8EC831304802"
+            uuid = "F5D1DFF1-01ED-43B8-88D7-05E69911E99A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyCarTests/ScreenViewModelTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "testLockButtonClickedUpdatesInterfaceState()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "37DFA026-5060-43DA-BD28-D3886C3C1F10"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyCarTests/ScreenViewModelTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "testLockButtonClickedUpdatesInterfaceState()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "575B1D4A-A4B7-438A-BBB5-33BC449523E7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyCarTests/ScreenViewModelTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
+            landmarkName = "testLockButtonClickedUpdatesInterfaceState()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A8B4BF87-F0ED-4640-AEB4-9FD56D83CCB4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MyCar/ViewModels/CarScreenViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "lockDoors()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "09A2DB1E-DFA7-4520-8D0A-FE0A99C20EF9"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -34,50 +98,20 @@
             endingLineNumber = "104"
             landmarkName = "changeDoorsState()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "03D3CE2C-4B34-4BF9-B645-8EC831304802 - 126ae02f55d027b5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "MyCar.CarScreenViewModel.changeDoorsState() -&gt; ()"
-                  moduleName = "MyCar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/goharvardanyan/Desktop/MyCar/MyCar/ViewModels/CarScreenViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "104"
-                  endingLineNumber = "104">
-               </Location>
-               <Location
-                  uuid = "03D3CE2C-4B34-4BF9-B645-8EC831304802 - edec091d1b4a7f0d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (MyCar.SettingItemUIInfoInterface) -&gt; Swift.Bool in MyCar.CarScreenViewModel.changeDoorsState() -&gt; ()"
-                  moduleName = "MyCar"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/goharvardanyan/Desktop/MyCar/MyCar/ViewModels/CarScreenViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "104"
-                  endingLineNumber = "104">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E8752604-58AC-4349-967A-F9BE70C8B376"
+            uuid = "92A14358-2718-4CDD-B894-751AE9351852"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCarTests/ScreenViewModelTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "178"
-            endingLineNumber = "178"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "testLockButtonClickedUpdatesInterfaceState()"
             landmarkType = "7">
          </BreakpointContent>
@@ -85,31 +119,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5E8413FC-16C4-46A6-AC8E-070231A41C37"
+            uuid = "1ADAAE28-92E4-48B4-9CDA-CF96F1B02E14"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MyCarTests/ScreenViewModelTests.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "170"
-            endingLineNumber = "170"
-            landmarkName = "testLockButtonClickedUpdatesInterfaceState()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "678DEC2F-83D4-42E3-A5C1-6E73058FEFE4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "MyCarTests/ScreenViewModelTests.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "172"
-            endingLineNumber = "172"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "testLockButtonClickedUpdatesInterfaceState()"
             landmarkType = "7">
          </BreakpointContent>

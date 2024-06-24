@@ -1,5 +1,5 @@
 //
-//  ProjectColorSpecs.swift
+//  ColorSpec.swift
 //  MyCar
 //
 //  Created by Gohar Vardanyan on 6/20/24.

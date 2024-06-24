@@ -18,12 +18,12 @@ struct BottomBarUIAttributes {
     let textFont = Font.caption
     let textPadding = UIEdgeInsets(top: 4, left: 0, bottom: 0, right: 0)
     
-    let selectedForgroundColor = HexColorSpec.lightBrown
+    let selectedForgroundColor = ColorSpec.lightBrown
     let deselectedForgroundColor = Color.black
     
     let inidicatorAlignments: Alignment = .top
     let indicatorHeight: CGFloat = 2
-    let indicatorColor = HexColorSpec.lightBrown
+    let indicatorColor = ColorSpec.lightBrown
     let indicatorMoveAnimDur: CGFloat = 0.3
 
 }
