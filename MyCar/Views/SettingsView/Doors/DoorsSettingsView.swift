@@ -8,20 +8,21 @@
 import SwiftUI
 
 struct DoorsSettingsView: View {
+    @Binding var doorState: DoorItemUIInfo
+
     let onLockedButtonTapped: () -> Void
     let onUnlockedButtonTapped: () -> Void
     
-    @Binding var doorState: SettingItemStateInterface
-    
+    let theme = DoorUIFixedTheme ()
+        
     var body: some View {
-        if let doorState = doorState as? DoorStateInterface {
             HStack(spacing: 7) {
                 Spacer()
                 
-                if doorState.state != .unlocking {
+                if doorState.state != .locking {
                     doorButton(
-                        icon: doorState.uiFixedState.leftIcon,
-                        attributes: doorState.uiFixedState,
+                        icon: theme.leftIcon,
+                        theme: theme.butonTheme,
                         foregroundColor: doorState.uiChangableState.leftButtonIconColor,
                         backgroundColor: doorState.uiChangableState.leftButtonBackground,
                         action: onLockedButtonTapped
@@ -29,15 +30,15 @@ struct DoorsSettingsView: View {
                     .disabled(doorState.uiChangableState.leftButtonDisabled)
 
                 } else {
-                    CircularLoadingView(color: doorState.uiFixedState.circleColor,
-                                        lineWidth: doorState.uiFixedState.circleWidth,
-                                        frameSize: doorState.uiFixedState.buttonSize.height,
-                                        animationDuration: doorState.uiFixedState.animationDuration)
+                    CircularLoadingView(color: theme.circleColor,
+                                        lineWidth: theme.circleWidth,
+                                        frameSize: theme.butonTheme.buttonSize.height,
+                                        animationDuration: theme.animationDuration)
                 }
                 
                 doorButton(
-                    icon: doorState.uiFixedState.rightIcon,
-                    attributes: doorState.uiFixedState,
+                    icon: theme.rightIcon,
+                    theme: theme.butonTheme,
                     foregroundColor: doorState.uiChangableState.rightButtonIconColor,
                     backgroundColor: doorState.uiChangableState.rightButtonBackground,
                     action: onUnlockedButtonTapped
@@ -46,14 +47,13 @@ struct DoorsSettingsView: View {
                 
                 Spacer()
             }
-            .padding(.vertical, doorState.uiFixedState.horizontalPadding)
-            .background(doorState.uiFixedState.backgroundColor)
-        }
+            .padding(.vertical, theme.horizontalPadding)
+            .background(theme.backgroundColor)
     }
     
-    private func doorButton(icon: String, attributes: DoorUIFixedAttributes, foregroundColor: Color, backgroundColor: Color, action: @escaping () -> Void) -> some View {
+    private func doorButton(icon: String, theme: DoorButtonTheme, foregroundColor: Color, backgroundColor: Color, action: @escaping () -> Void) -> some View {
         self.modifier(DoorButtonModifier(icon: icon,
-                                         attributes: attributes,
+                                         theme: theme,
                                          foregroundColor: foregroundColor,
                                          backgroundColor: backgroundColor,
                                          action: action))

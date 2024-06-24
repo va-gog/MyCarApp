@@ -9,12 +9,12 @@
         "doors": {
             "name": "doors",
             "title": "DOORS",
-            "locked": true
+            "locked": false
         },
         "engine": {
             "name": "engine",
             "title": "ENGINE",
-            "started": true
+            "started": false
         }
     }
   }

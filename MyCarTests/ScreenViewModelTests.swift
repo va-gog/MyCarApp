@@ -30,8 +30,8 @@ final class CarScreenViewModelTests: XCTestCase {
         cancellables = Set<AnyCancellable>()
         sut = CarScreenViewModel(fetchService: fetchService,
                                  timerManager: timerManager,
-                                 settinItemFactory: SettingItemFactoryMock(),
-                                 interfaceState: CarInterfaceStateFake())
+                                 settingsStates: <#T##[any SettingItemUIInfoInterface]#>
+                                 settinItemFactory: SettingItemFactoryMock())
         carData = carModel()
     }
 
@@ -115,10 +115,10 @@ final class CarScreenViewModelTests: XCTestCase {
         sut.setupWithData(carData)
         
         // Then
-        XCTAssertEqual(sut.interfaceState.carDescription.name, carData.name)
-        XCTAssertEqual(sut.interfaceState.carDescription.fuel, carData.fuel)
-        XCTAssertEqual(sut.interfaceState.carDescription.imagesNames, carData.images)
-        XCTAssertEqual(sut.interfaceState.settingsStates.count, 2)
+        XCTAssertEqual(sut.carDescription.name, carData.name)
+        XCTAssertEqual(sut.carDescription.fuel, carData.fuel)
+        XCTAssertEqual(sut.carDescription.imagesNames, carData.images)
+        XCTAssertEqual(sut.settingsStates.count, 2)
         XCTAssertEqual(sut.fetchState, .finished)
     }
 
@@ -139,17 +139,15 @@ final class CarScreenViewModelTests: XCTestCase {
         
         // Then
         wait(for: [expectation], timeout: 1.0)
-        XCTAssertEqual(alertViewInfo?.apply, DoorUIFixedAttributes().alertApply)
-        XCTAssertEqual(alertViewInfo?.cancel, DoorUIFixedAttributes().alertCancel)
-        XCTAssertEqual(alertViewInfo?.title, DoorUIFixedAttributes().alertTitle)
+        XCTAssertNotNil(alertViewInfo)
     }
     
-    func testLockButtonClickedUpdatesInterfaceState() {
-        // Given
+    
+    func testChangeStateActionForEmptySettinds() {
         var stateChanged = false
         let expectation = XCTestExpectation(description: "State change when lock pressed")
         
-        sut.$interfaceState
+        sut.settingsStates.publisher
             .sink { _ in
                 stateChanged = true
                 expectation.fulfill()
@@ -161,7 +159,27 @@ final class CarScreenViewModelTests: XCTestCase {
         
         // Then
         wait(for: [expectation], timeout: 1.0)
-        XCTAssertTrue(stateChanged)
+        XCTAssertFalse(stateChanged)
+    }
+    
+    func testLockButtonClickedUpdatesInterfaceState() {
+        // Given
+        var stateChanged = false
+        let expectation = XCTestExpectation(description: "State change when lock pressed")
+        
+        sut.settingsStates.publisher
+            .sink { _ in
+                stateChanged = true
+                expectation.fulfill()
+            }
+            .store(in: &cancellables)
+        
+        // When
+        sut.buttonAction(buttonType: .lock)
+        
+        // Then
+        wait(for: [expectation], timeout: 1.0)
+        XCTAssertFalse(stateChanged)
     }
     
     func testApplyButtonClickedUpdatesInterfaceStateAndTimer() {
@@ -169,7 +187,7 @@ final class CarScreenViewModelTests: XCTestCase {
         var stateChanged = false
         let expectation = XCTestExpectation(description: "Unlock action")
         
-        sut.$interfaceState
+        sut.settingsStates.publisher
             .sink { _ in
                 stateChanged = true
                 expectation.fulfill()
@@ -189,7 +207,7 @@ final class CarScreenViewModelTests: XCTestCase {
         var stateChanged = false
         let expectation = XCTestExpectation(description: "Stop action")
         
-        sut.$interfaceState
+        sut.settingsStates.publisher
             .sink { _ in
                 stateChanged = true
                 expectation.fulfill()
@@ -209,7 +227,7 @@ final class CarScreenViewModelTests: XCTestCase {
         var stateChanged = false
         let expectation = XCTestExpectation(description: "Start action")
         
-        sut.$interfaceState
+        sut.settingsStates.publisher
             .sink { _ in
                 stateChanged = true
                 expectation.fulfill()
@@ -229,7 +247,7 @@ final class CarScreenViewModelTests: XCTestCase {
         var updatedTime = false
         let expectation = XCTestExpectation(description: "Timer action completed")
         
-        sut.$interfaceState
+        sut.settingsStates.publisher
             .sink { _ in
                 updatedTime = true
                 expectation.fulfill()

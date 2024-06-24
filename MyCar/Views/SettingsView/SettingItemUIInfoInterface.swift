@@ -2,15 +2,12 @@
 //  SettingItemUIInfoInterface.swift
 //  MyCar
 //
-//  Created by Gohar Vardanyan on 6/20/24.
+//  Created by Gohar Vardanyan on 6/21/24.
 //
 
 import Foundation
 
 protocol SettingItemUIInfoInterface {
     var title: String { get }
-    var state: SettingItemStateInterface { get set }
-    
-    func changeState()
+    var description: String? { get }
 }
-

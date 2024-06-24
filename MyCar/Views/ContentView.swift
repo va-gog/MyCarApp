@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var viewModel = CarScreenViewModel(fetchService: CarDataFetchModel(fetchService: DataFetchService()), timerManager: TimerManager())
+    @StateObject private var viewModel = CarScreenViewModel()
     private let carDataURL = Bundle.main.url(forResource: "CarData", withExtension: "json")
     @State private var showModal = false
     
@@ -28,10 +28,10 @@ struct ContentView: View {
                 backgroundColor
                     .overlay {
                         VStack(spacing: verticalSpaceing) {
-                            CarDescriptionView(car: viewModel.interfaceState.carDescription)
+                            CarDescriptionView(car: viewModel.carDescription)
                                 .background(.white)
                             
-                            ImagesCollectionView(viewModel: ImagePagingViewModel(images: viewModel.interfaceState.carDescription.imagesNames,
+                            ImagesCollectionView(viewModel: ImagePagingViewModel(images: viewModel.carDescription.imagesNames,
                                                                                  pagesCount: paginationCount,
                                                                                  currentIndexSubject: viewModel.currentIndex),
                                                  showRefreshOverlay: $viewModel.updatedTime)
@@ -40,10 +40,9 @@ struct ContentView: View {
                                 withAnimation { [weak viewModel] in
                                     viewModel?.buttonAction(buttonType: buttonType)
                                 }
-                            }, settings: $viewModel.interfaceState.settingsStates)
+                            }, settings: $viewModel.settingsStates)
                             
                             Spacer()
-                            
                             BottomBar<Tab>(selectedTab: .home, onTab: {_ in }).background(.white)
                         }
                         if let alertInfo = viewModel.alertViewInfo {

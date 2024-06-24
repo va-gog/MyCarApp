@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EngineUIChangableAttributes: EngineChangableInterface {
+struct EngineUIChangableTheme {
     var leftButtonBackground: Color
     var leftButtonTextColor: Color
     var rightButtonBackground: Color

@@ -11,13 +11,10 @@ struct SettingItemFactory: SettingItemFactoryInterface {
     func settingForModel(_ model: SettingModelProtocol) -> SettingItemUIInfoInterface? {
         switch model {
         case let setting as DoorModel:
-            return SettingItemUIInfo(title: setting.title,
-                                 state: setting.locked ? DoorLockedState() : DoorUnlockedState())
+            return  DoorItemUIInfo(state: setting.locked ? .locked : .unlocked)
             
         case let setting as EngineModel:
-            return SettingItemUIInfo(title: setting.title,
-                                 state: setting.started ? EngineStartedState() : EngineStoppedState())
-            
+            return EngineItemUIInfo(state: setting.started ? .started : .stopped)
         default:
             return nil
         }

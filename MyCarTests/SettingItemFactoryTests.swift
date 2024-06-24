@@ -23,28 +23,30 @@ final class SettingItemFactoryTests: XCTestCase {
 
     func testSettingForModelWithDoorLockedReturnsDoorLockedState() {
         // Given
-        let title = "Door"
+        let title = "Doors"
         
         // When
         let settingLocked = sut.settingForModel(DoorModel(title: title, locked: true))
         
         // Then
         XCTAssertEqual(settingLocked!.title, title)
-        XCTAssertNotNil(settingLocked?.state as? DoorStateInterface)
-        XCTAssertNotNil((settingLocked?.state as? DoorStateInterface) as? DoorLockedState)
+        XCTAssertNotNil(settingLocked is DoorItemUIInfo)
+        XCTAssertEqual((settingLocked as? DoorItemUIInfo)?.state, .locked)
         
        
     }
     
     func testSettingForModelWithDoorUnlockedReturnsDoorUnlockedState() {
         // Given
-        let title = "Door"
+        let title = "Doors"
         
         // When
         let settingUnlocked = sut.settingForModel(DoorModel(title: title, locked: false))
         
         // Then
-        XCTAssertNotNil((settingUnlocked?.state as? DoorStateInterface) as? DoorUnlockedState)
+        XCTAssertEqual(settingUnlocked!.title, title)
+        XCTAssertNotNil(settingUnlocked is DoorItemUIInfo)
+        XCTAssertEqual((settingUnlocked as? DoorItemUIInfo)?.state, .unlocked)
     }
     
     func testSettingForModelWithEngineStartedReturnsEngineStartedState() {
@@ -56,8 +58,8 @@ final class SettingItemFactoryTests: XCTestCase {
         
         // Then
         XCTAssertEqual(settingStarted!.title, title)
-        XCTAssertNotNil(settingStarted?.state as? EngineStateInterface)
-        XCTAssertNotNil((settingStarted?.state as? EngineStateInterface) as? EngineStartedState)
+        XCTAssertNotNil(settingStarted is EngineItemUIInfo)
+        XCTAssertEqual((settingStarted as? EngineItemUIInfo)?.state, .started)
     }
         
     func testSettingForModelWithEngineStoppedReturnsEngineStoppedState() {
@@ -69,8 +71,8 @@ final class SettingItemFactoryTests: XCTestCase {
         
         // Then
         XCTAssertEqual(settingStopped!.title, title)
-        XCTAssertNotNil(settingStopped?.state as? EngineStateInterface)
-        XCTAssertNotNil((settingStopped?.state as? EngineStateInterface) as? EngineStoppedState)
+        XCTAssertNotNil(settingStopped is EngineItemUIInfo)
+        XCTAssertEqual((settingStopped as? EngineItemUIInfo)?.state, .stopped)
     }
     
     func testSettingForModelWithEngineAbsentReturnsNil() {

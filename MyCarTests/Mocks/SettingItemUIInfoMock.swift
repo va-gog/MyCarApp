@@ -7,12 +7,7 @@
 
 @testable import MyCar
 
-struct SettingItemUIInfoMock: SettingItemUIInfoInterface {
-    var title: String = ""
-    
-    var state: SettingItemStateInterface = DoorLockedState()
-    
-    func changeState() { }
-    
-    
+struct SettingItemUIInfoFake: SettingItemUIInfoInterface {
+    var title: String = "Test"
+    var description: String? = "Test"
 }

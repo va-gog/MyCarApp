@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum DoorStates {
+enum DoorState {
     case locked
     case unlocked
-    case unlocking
+    case locking
 }

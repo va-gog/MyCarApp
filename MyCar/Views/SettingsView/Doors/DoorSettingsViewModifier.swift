@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DoorButtonModifier: ViewModifier {
     let icon: String
-    let attributes: DoorUIFixedAttributes
+    let theme: DoorButtonTheme
     let foregroundColor: Color
     let backgroundColor: Color
     let action: () -> Void
@@ -20,13 +20,13 @@ struct DoorButtonModifier: ViewModifier {
         }) {
             Image(icon)
                 .resizable()
-                .frame(width: attributes.iconSize.width,
-                       height: attributes.iconSize.height)
+                .frame(width: theme.iconSize.width,
+                       height: theme.iconSize.height)
                 .aspectRatio(contentMode: .fit)
                 .foregroundColor(foregroundColor)
         }
-        .frame(width: attributes.buttonSize.width,
-               height: attributes.buttonSize.height)
+        .frame(width: theme.buttonSize.width,
+               height: theme.buttonSize.height)
         .background(backgroundColor)
         .clipShape(Circle())
     }

@@ -8,7 +8,7 @@
 import Foundation
 @testable import MyCar
 
-final class MockFetchService: DataFetchServiceInterface {
+struct EngineItemUIInfoInterface: DataFetchServiceInterface {
     var result: Result<Data, Error>?
     
     func fetchDataForCar(url: URL) async throws -> Data {

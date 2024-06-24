@@ -1,5 +1,5 @@
 //
-//  DoorUIChangableAttributes.swift
+//  DoorUIChangableTheme.swift
 //  MyCar
 //
 //  Created by Gohar Vardanyan on 6/21/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DoorUIChangableAttributes: DoorChangableInterface {
+struct DoorUIChangableTheme {
     var leftButtonDisabled: Bool
     var leftButtonBackground: Color
     var leftButtonIconColor: Color

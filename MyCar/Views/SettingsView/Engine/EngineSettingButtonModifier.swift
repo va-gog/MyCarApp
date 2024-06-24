@@ -9,7 +9,7 @@ import SwiftUI
 
 struct EngineSettingButtonModifier: ViewModifier {
     let title: String
-    let attributes: EngineUIFixedAttributes
+    let theme: EngineButtonTheme
     let foregroundColor: Color
     let backgroundColor: Color
     let action: () -> Void
@@ -19,14 +19,14 @@ struct EngineSettingButtonModifier: ViewModifier {
             action()
         }) {
             Text(title)
-                .font(attributes.font)
-                .frame(width: attributes.textSize.width,
-                       height: attributes.textSize.height)
+                .font(theme.font)
+                .frame(width: theme.textSize.width,
+                       height: theme.textSize.height)
                 .aspectRatio(contentMode: .fit)
                 .foregroundColor(foregroundColor)
         }
-        .frame(width: attributes.buttonSize.width,
-               height: attributes.buttonSize.height)
+        .frame(width: theme.buttonSize.width,
+               height: theme.buttonSize.height)
         .background(backgroundColor)
         .clipShape(Circle())
         

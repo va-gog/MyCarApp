@@ -17,8 +17,6 @@
 		492B6F3D2C272752003F39CB /* CarDataFetchServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B6F3C2C272752003F39CB /* CarDataFetchServiceTests.swift */; };
 		492B6F412C272E44003F39CB /* DataFetchServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B6F402C272E44003F39CB /* DataFetchServiceMock.swift */; };
 		492B6F452C273045003F39CB /* SettingItemUIInfoMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B6F442C273045003F39CB /* SettingItemUIInfoMock.swift */; };
-		492B6F492C2735DC003F39CB /* CarInterfaceStateFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B6F482C2735DC003F39CB /* CarInterfaceStateFake.swift */; };
-		492B6F4B2C27360E003F39CB /* DoorStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B6F4A2C27360E003F39CB /* DoorStateTests.swift */; };
 		492B6F4D2C2736F9003F39CB /* IconTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B6F4C2C2736F9003F39CB /* IconTests.swift */; };
 		492B6F502C273737003F39CB /* IconNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B6F4F2C273737003F39CB /* IconNames.swift */; };
 		492B6F522C27392E003F39CB /* FetchErrorDescriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B6F512C27392E003F39CB /* FetchErrorDescriptions.swift */; };
@@ -39,9 +37,7 @@
 		494CF5AE2C2340FD00DEA3DA /* CarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5AD2C2340FD00DEA3DA /* CarModel.swift */; };
 		494CF5B22C23412D00DEA3DA /* EngineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5B12C23412D00DEA3DA /* EngineModel.swift */; };
 		494CF5B42C23413900DEA3DA /* DoorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5B32C23413900DEA3DA /* DoorModel.swift */; };
-		494CF5B72C23415B00DEA3DA /* DoorLockedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5B62C23415B00DEA3DA /* DoorLockedState.swift */; };
-		494CF5B92C23416900DEA3DA /* DoorStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5B82C23416900DEA3DA /* DoorStates.swift */; };
-		494CF5BB2C23417A00DEA3DA /* DoorUnlockedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5BA2C23417A00DEA3DA /* DoorUnlockedState.swift */; };
+		494CF5B92C23416900DEA3DA /* DoorState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5B82C23416900DEA3DA /* DoorState.swift */; };
 		494CF5BD2C23418D00DEA3DA /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5BC2C23418D00DEA3DA /* Icons.swift */; };
 		494CF5C02C2341C400DEA3DA /* CarDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5BF2C2341C400DEA3DA /* CarDescriptionView.swift */; };
 		494CF5C22C2341D200DEA3DA /* CarDescrViewUIAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5C12C2341D200DEA3DA /* CarDescrViewUIAttributes.swift */; };
@@ -53,11 +49,8 @@
 		494CF5D12C23426000DEA3DA /* BottomBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5D02C23426000DEA3DA /* BottomBarView.swift */; };
 		494CF5D32C23429B00DEA3DA /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5D22C23429B00DEA3DA /* Tab.swift */; };
 		494CF5D72C2342C300DEA3DA /* CarData.json in Resources */ = {isa = PBXBuildFile; fileRef = 494CF5D62C2342C300DEA3DA /* CarData.json */; };
-		494CF5DC2C2344BB00DEA3DA /* EngineStartedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5DB2C2344BB00DEA3DA /* EngineStartedState.swift */; };
-		494CF5DE2C2344DC00DEA3DA /* EngineStoppedState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5DD2C2344DC00DEA3DA /* EngineStoppedState.swift */; };
 		494CF5E22C234C4600DEA3DA /* CarDescriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5E12C234C4600DEA3DA /* CarDescriptionModel.swift */; };
 		494CF5E62C238FB100DEA3DA /* FetchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5E52C238FB100DEA3DA /* FetchState.swift */; };
-		494CF5E82C238FC200DEA3DA /* CarInterfaceState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5E72C238FC200DEA3DA /* CarInterfaceState.swift */; };
 		494CF5EA2C238FDC00DEA3DA /* CarScreenViewModelInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5E92C238FDC00DEA3DA /* CarScreenViewModelInterface.swift */; };
 		494CF5EC2C23D81900DEA3DA /* ImagePagingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5EB2C23D81900DEA3DA /* ImagePagingViewModel.swift */; };
 		494CF5F02C240AA100DEA3DA /* SettingModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5EF2C240AA100DEA3DA /* SettingModelProtocol.swift */; };
@@ -65,14 +58,10 @@
 		494CF5FB2C24210E00DEA3DA /* EngineSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5FA2C24210E00DEA3DA /* EngineSettingsView.swift */; };
 		494CF5FD2C24212E00DEA3DA /* DoorsSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5FC2C24212E00DEA3DA /* DoorsSettingsView.swift */; };
 		494CF6052C24233000DEA3DA /* SettingItemUIInfoInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6042C24233000DEA3DA /* SettingItemUIInfoInterface.swift */; };
-		494CF6092C24240400DEA3DA /* SettingItemUIInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6082C24240400DEA3DA /* SettingItemUIInfo.swift */; };
+		494CF6092C24240400DEA3DA /* DoorItemUIInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6082C24240400DEA3DA /* DoorItemUIInfo.swift */; };
 		494CF60D2C2431F400DEA3DA /* CircularLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF60C2C2431F400DEA3DA /* CircularLoadingView.swift */; };
-		494CF60F2C2446B000DEA3DA /* SettingItemStateInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF60E2C2446B000DEA3DA /* SettingItemStateInterface.swift */; };
 		494CF6132C24716900DEA3DA /* ProjectColorSpecs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6122C24716900DEA3DA /* ProjectColorSpecs.swift */; };
 		494CF6162C2480BC00DEA3DA /* EngineState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6152C2480BC00DEA3DA /* EngineState.swift */; };
-		494CF6182C24816400DEA3DA /* DoorLockingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6172C24816400DEA3DA /* DoorLockingState.swift */; };
-		494CF61F2C249F8A00DEA3DA /* DoorStateInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF61E2C249F8A00DEA3DA /* DoorStateInterface.swift */; };
-		494CF6212C249FA600DEA3DA /* EngineStateInerface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6202C249FA600DEA3DA /* EngineStateInerface.swift */; };
 		494CF6232C24BEA300DEA3DA /* TimerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6222C24BEA300DEA3DA /* TimerManager.swift */; };
 		494CF6272C256A9C00DEA3DA /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6262C256A9C00DEA3DA /* AlertView.swift */; };
 		494CF62A2C258DFE00DEA3DA /* MoreIconModifer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6292C258DFE00DEA3DA /* MoreIconModifer.swift */; };
@@ -80,25 +69,28 @@
 		494CF62E2C259A9E00DEA3DA /* BottomBarUIAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF62D2C259A9E00DEA3DA /* BottomBarUIAttributes.swift */; };
 		494CF6302C259C1D00DEA3DA /* TabItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF62F2C259C1D00DEA3DA /* TabItemProtocol.swift */; };
 		494CF6352C25AD6C00DEA3DA /* ImagePagingViewModelInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6342C25AD6C00DEA3DA /* ImagePagingViewModelInterface.swift */; };
-		494CF6372C25AE4200DEA3DA /* AlertTitleUIAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6362C25AE4200DEA3DA /* AlertTitleUIAttributes.swift */; };
-		494CF63E2C25B81D00DEA3DA /* AlertButtonUIAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF63D2C25B81D00DEA3DA /* AlertButtonUIAttributes.swift */; };
-		494CF6402C25BAC800DEA3DA /* AlertViewUIAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF63F2C25BAC800DEA3DA /* AlertViewUIAttributes.swift */; };
+		494CF6372C25AE4200DEA3DA /* AlertTitleUITheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6362C25AE4200DEA3DA /* AlertTitleUITheme.swift */; };
+		494CF63E2C25B81D00DEA3DA /* AlertButtonUITheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF63D2C25B81D00DEA3DA /* AlertButtonUITheme.swift */; };
+		494CF6402C25BAC800DEA3DA /* AlertViewUITheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF63F2C25BAC800DEA3DA /* AlertViewUITheme.swift */; };
 		494CF6422C25BF2400DEA3DA /* AlertButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6412C25BF2400DEA3DA /* AlertButtonModifier.swift */; };
-		494CF6442C25CCF100DEA3DA /* DoorChangableInterface .swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6432C25CCF100DEA3DA /* DoorChangableInterface .swift */; };
-		494CF6462C25DFAE00DEA3DA /* DoorUIChangableAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6452C25DFAE00DEA3DA /* DoorUIChangableAttributes.swift */; };
-		494CF6482C25DFEA00DEA3DA /* EngineChangableInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6472C25DFEA00DEA3DA /* EngineChangableInterface.swift */; };
+		494CF6462C25DFAE00DEA3DA /* DoorUIChangableTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6452C25DFAE00DEA3DA /* DoorUIChangableTheme.swift */; };
 		494CF64A2C25E00000DEA3DA /* EngineUIChangableAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6492C25E00000DEA3DA /* EngineUIChangableAttributes.swift */; };
 		494CF64C2C25E2C600DEA3DA /* DoorSettingsViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF64B2C25E2C600DEA3DA /* DoorSettingsViewModifier.swift */; };
-		494CF64E2C25E42000DEA3DA /* EngineUIFixedAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF64D2C25E41F00DEA3DA /* EngineUIFixedAttributes.swift */; };
-		494CF6502C25E49800DEA3DA /* DoorUIFixedAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF64F2C25E49800DEA3DA /* DoorUIFixedAttributes.swift */; };
 		494CF6522C25F60900DEA3DA /* EngineSettingButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6512C25F60900DEA3DA /* EngineSettingButtonModifier.swift */; };
-		494CF6542C2600C600DEA3DA /* SettingsButtonFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6532C2600C600DEA3DA /* SettingsButtonFactory.swift */; };
 		494CF6562C261AB300DEA3DA /* TimerManagerInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6552C261AB300DEA3DA /* TimerManagerInterface.swift */; };
 		494CF6582C261FE600DEA3DA /* AlertViewInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6572C261FE600DEA3DA /* AlertViewInfo.swift */; };
 		494CF6612C2684E000DEA3DA /* SettingItemFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6602C2684E000DEA3DA /* SettingItemFactory.swift */; };
 		494CF6632C2684FF00DEA3DA /* SettingItemFactoryInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6622C2684FF00DEA3DA /* SettingItemFactoryInterface.swift */; };
 		494CF6652C2690A800DEA3DA /* CarDataFetchServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6642C2690A800DEA3DA /* CarDataFetchServiceMock.swift */; };
 		494CF6672C2690D900DEA3DA /* TimerManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF6662C2690D900DEA3DA /* TimerManagerMock.swift */; };
+		49CF1DD22C28CF2A00337118 /* EngineItemUIInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF1DD12C28CF2A00337118 /* EngineItemUIInfo.swift */; };
+		49CF1DD42C28DBCD00337118 /* DoorButtonTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF1DD32C28DBCD00337118 /* DoorButtonTheme.swift */; };
+		49CF1DD82C28DC1300337118 /* DoorUIFixedTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF1DD72C28DC1300337118 /* DoorUIFixedTheme.swift */; };
+		49CF1DDA2C28DC7400337118 /* CarSettingsViewTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF1DD92C28DC7400337118 /* CarSettingsViewTheme.swift */; };
+		49CF1DDC2C28E47C00337118 /* DoorItemUIInfoInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF1DDB2C28E47C00337118 /* DoorItemUIInfoInterface.swift */; };
+		49CF1DDE2C28E49B00337118 /* SettingItemUIInfoInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF1DDD2C28E49B00337118 /* SettingItemUIInfoInterface.swift */; };
+		49CF1DE22C28EAE700337118 /* SettingsModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF1DE12C28EAE700337118 /* SettingsModelTests.swift */; };
+		49CF1DE42C28F0C700337118 /* DoorItemUIInfoFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF1DE32C28F0C700337118 /* DoorItemUIInfoFake.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,8 +121,6 @@
 		492B6F3C2C272752003F39CB /* CarDataFetchServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDataFetchServiceTests.swift; sourceTree = "<group>"; };
 		492B6F402C272E44003F39CB /* DataFetchServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetchServiceMock.swift; sourceTree = "<group>"; };
 		492B6F442C273045003F39CB /* SettingItemUIInfoMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemUIInfoMock.swift; sourceTree = "<group>"; };
-		492B6F482C2735DC003F39CB /* CarInterfaceStateFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInterfaceStateFake.swift; sourceTree = "<group>"; };
-		492B6F4A2C27360E003F39CB /* DoorStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorStateTests.swift; sourceTree = "<group>"; };
 		492B6F4C2C2736F9003F39CB /* IconTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconTests.swift; sourceTree = "<group>"; };
 		492B6F4F2C273737003F39CB /* IconNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconNames.swift; sourceTree = "<group>"; };
 		492B6F512C27392E003F39CB /* FetchErrorDescriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchErrorDescriptions.swift; sourceTree = "<group>"; };
@@ -154,9 +144,7 @@
 		494CF5AD2C2340FD00DEA3DA /* CarModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModel.swift; sourceTree = "<group>"; };
 		494CF5B12C23412D00DEA3DA /* EngineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineModel.swift; sourceTree = "<group>"; };
 		494CF5B32C23413900DEA3DA /* DoorModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorModel.swift; sourceTree = "<group>"; };
-		494CF5B62C23415B00DEA3DA /* DoorLockedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorLockedState.swift; sourceTree = "<group>"; };
-		494CF5B82C23416900DEA3DA /* DoorStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorStates.swift; sourceTree = "<group>"; };
-		494CF5BA2C23417A00DEA3DA /* DoorUnlockedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorUnlockedState.swift; sourceTree = "<group>"; };
+		494CF5B82C23416900DEA3DA /* DoorState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorState.swift; sourceTree = "<group>"; };
 		494CF5BC2C23418D00DEA3DA /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
 		494CF5BF2C2341C400DEA3DA /* CarDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDescriptionView.swift; sourceTree = "<group>"; };
 		494CF5C12C2341D200DEA3DA /* CarDescrViewUIAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDescrViewUIAttributes.swift; sourceTree = "<group>"; };
@@ -168,26 +156,19 @@
 		494CF5D02C23426000DEA3DA /* BottomBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarView.swift; sourceTree = "<group>"; };
 		494CF5D22C23429B00DEA3DA /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		494CF5D62C2342C300DEA3DA /* CarData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CarData.json; sourceTree = "<group>"; };
-		494CF5DB2C2344BB00DEA3DA /* EngineStartedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineStartedState.swift; sourceTree = "<group>"; };
-		494CF5DD2C2344DC00DEA3DA /* EngineStoppedState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineStoppedState.swift; sourceTree = "<group>"; };
 		494CF5E12C234C4600DEA3DA /* CarDescriptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDescriptionModel.swift; sourceTree = "<group>"; };
 		494CF5E52C238FB100DEA3DA /* FetchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchState.swift; sourceTree = "<group>"; };
-		494CF5E72C238FC200DEA3DA /* CarInterfaceState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarInterfaceState.swift; sourceTree = "<group>"; };
 		494CF5E92C238FDC00DEA3DA /* CarScreenViewModelInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarScreenViewModelInterface.swift; sourceTree = "<group>"; };
-		494CF5EB2C23D81900DEA3DA /* ImagePagingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePagingViewModel.swift; sourceTree = "<group>"; };
+		494CF5EB2C23D81900DEA3DA /* ImagePagingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImagePagingViewModel.swift; path = Services/ImagePagingViewModel.swift; sourceTree = "<group>"; };
 		494CF5EF2C240AA100DEA3DA /* SettingModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModelProtocol.swift; sourceTree = "<group>"; };
 		494CF5F22C240C4100DEA3DA /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		494CF5FA2C24210E00DEA3DA /* EngineSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineSettingsView.swift; sourceTree = "<group>"; };
 		494CF5FC2C24212E00DEA3DA /* DoorsSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorsSettingsView.swift; sourceTree = "<group>"; };
 		494CF6042C24233000DEA3DA /* SettingItemUIInfoInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemUIInfoInterface.swift; sourceTree = "<group>"; };
-		494CF6082C24240400DEA3DA /* SettingItemUIInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemUIInfo.swift; sourceTree = "<group>"; };
+		494CF6082C24240400DEA3DA /* DoorItemUIInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorItemUIInfo.swift; sourceTree = "<group>"; };
 		494CF60C2C2431F400DEA3DA /* CircularLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularLoadingView.swift; sourceTree = "<group>"; };
-		494CF60E2C2446B000DEA3DA /* SettingItemStateInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemStateInterface.swift; sourceTree = "<group>"; };
 		494CF6122C24716900DEA3DA /* ProjectColorSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectColorSpecs.swift; sourceTree = "<group>"; };
 		494CF6152C2480BC00DEA3DA /* EngineState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineState.swift; sourceTree = "<group>"; };
-		494CF6172C24816400DEA3DA /* DoorLockingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorLockingState.swift; sourceTree = "<group>"; };
-		494CF61E2C249F8A00DEA3DA /* DoorStateInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorStateInterface.swift; sourceTree = "<group>"; };
-		494CF6202C249FA600DEA3DA /* EngineStateInerface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineStateInerface.swift; sourceTree = "<group>"; };
 		494CF6222C24BEA300DEA3DA /* TimerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManager.swift; sourceTree = "<group>"; };
 		494CF6262C256A9C00DEA3DA /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		494CF6292C258DFE00DEA3DA /* MoreIconModifer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreIconModifer.swift; sourceTree = "<group>"; };
@@ -195,25 +176,28 @@
 		494CF62D2C259A9E00DEA3DA /* BottomBarUIAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomBarUIAttributes.swift; sourceTree = "<group>"; };
 		494CF62F2C259C1D00DEA3DA /* TabItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItemProtocol.swift; sourceTree = "<group>"; };
 		494CF6342C25AD6C00DEA3DA /* ImagePagingViewModelInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePagingViewModelInterface.swift; sourceTree = "<group>"; };
-		494CF6362C25AE4200DEA3DA /* AlertTitleUIAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTitleUIAttributes.swift; sourceTree = "<group>"; };
-		494CF63D2C25B81D00DEA3DA /* AlertButtonUIAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertButtonUIAttributes.swift; sourceTree = "<group>"; };
-		494CF63F2C25BAC800DEA3DA /* AlertViewUIAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewUIAttributes.swift; sourceTree = "<group>"; };
+		494CF6362C25AE4200DEA3DA /* AlertTitleUITheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertTitleUITheme.swift; sourceTree = "<group>"; };
+		494CF63D2C25B81D00DEA3DA /* AlertButtonUITheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertButtonUITheme.swift; sourceTree = "<group>"; };
+		494CF63F2C25BAC800DEA3DA /* AlertViewUITheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewUITheme.swift; sourceTree = "<group>"; };
 		494CF6412C25BF2400DEA3DA /* AlertButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertButtonModifier.swift; sourceTree = "<group>"; };
-		494CF6432C25CCF100DEA3DA /* DoorChangableInterface .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DoorChangableInterface .swift"; sourceTree = "<group>"; };
-		494CF6452C25DFAE00DEA3DA /* DoorUIChangableAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorUIChangableAttributes.swift; sourceTree = "<group>"; };
-		494CF6472C25DFEA00DEA3DA /* EngineChangableInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineChangableInterface.swift; sourceTree = "<group>"; };
+		494CF6452C25DFAE00DEA3DA /* DoorUIChangableTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorUIChangableTheme.swift; sourceTree = "<group>"; };
 		494CF6492C25E00000DEA3DA /* EngineUIChangableAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineUIChangableAttributes.swift; sourceTree = "<group>"; };
 		494CF64B2C25E2C600DEA3DA /* DoorSettingsViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorSettingsViewModifier.swift; sourceTree = "<group>"; };
-		494CF64D2C25E41F00DEA3DA /* EngineUIFixedAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineUIFixedAttributes.swift; sourceTree = "<group>"; };
-		494CF64F2C25E49800DEA3DA /* DoorUIFixedAttributes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorUIFixedAttributes.swift; sourceTree = "<group>"; };
 		494CF6512C25F60900DEA3DA /* EngineSettingButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineSettingButtonModifier.swift; sourceTree = "<group>"; };
-		494CF6532C2600C600DEA3DA /* SettingsButtonFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsButtonFactory.swift; sourceTree = "<group>"; };
 		494CF6552C261AB300DEA3DA /* TimerManagerInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManagerInterface.swift; sourceTree = "<group>"; };
 		494CF6572C261FE600DEA3DA /* AlertViewInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewInfo.swift; sourceTree = "<group>"; };
 		494CF6602C2684E000DEA3DA /* SettingItemFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemFactory.swift; sourceTree = "<group>"; };
 		494CF6622C2684FF00DEA3DA /* SettingItemFactoryInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemFactoryInterface.swift; sourceTree = "<group>"; };
 		494CF6642C2690A800DEA3DA /* CarDataFetchServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDataFetchServiceMock.swift; sourceTree = "<group>"; };
 		494CF6662C2690D900DEA3DA /* TimerManagerMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerManagerMock.swift; sourceTree = "<group>"; };
+		49CF1DD12C28CF2A00337118 /* EngineItemUIInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineItemUIInfo.swift; sourceTree = "<group>"; };
+		49CF1DD32C28DBCD00337118 /* DoorButtonTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorButtonTheme.swift; sourceTree = "<group>"; };
+		49CF1DD72C28DC1300337118 /* DoorUIFixedTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorUIFixedTheme.swift; sourceTree = "<group>"; };
+		49CF1DD92C28DC7400337118 /* CarSettingsViewTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarSettingsViewTheme.swift; sourceTree = "<group>"; };
+		49CF1DDB2C28E47C00337118 /* DoorItemUIInfoInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorItemUIInfoInterface.swift; sourceTree = "<group>"; };
+		49CF1DDD2C28E49B00337118 /* SettingItemUIInfoInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemUIInfoInterface.swift; sourceTree = "<group>"; };
+		49CF1DE12C28EAE700337118 /* SettingsModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModelTests.swift; sourceTree = "<group>"; };
+		49CF1DE32C28F0C700337118 /* DoorItemUIInfoFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorItemUIInfoFake.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,8 +230,8 @@
 			children = (
 				492B6F442C273045003F39CB /* SettingItemUIInfoMock.swift */,
 				494CF6662C2690D900DEA3DA /* TimerManagerMock.swift */,
-				492B6F482C2735DC003F39CB /* CarInterfaceStateFake.swift */,
 				492B6F302C27183D003F39CB /* SettingItemFactoryMock.swift */,
+				49CF1DE32C28F0C700337118 /* DoorItemUIInfoFake.swift */,
 				494CF6642C2690A800DEA3DA /* CarDataFetchServiceMock.swift */,
 				492B6F322C271C38003F39CB /* SettingModelFake.swift */,
 				492B6F402C272E44003F39CB /* DataFetchServiceMock.swift */,
@@ -310,14 +294,14 @@
 		494CF5472C2268F100DEA3DA /* MyCarTests */ = {
 			isa = PBXGroup;
 			children = (
-				492B6F2E2C2714CF003F39CB /* SettingItemFactoryTests.swift */,
+				494CF5482C2268F100DEA3DA /* ScreenViewModelTests.swift */,
+				492B6F3C2C272752003F39CB /* CarDataFetchServiceTests.swift */,
 				492B6F362C271E48003F39CB /* TimeManagerTests.swift */,
+				492B6F2C2C270445003F39CB /* ImagePaginationManagerTests.swift */,
+				492B6F2E2C2714CF003F39CB /* SettingItemFactoryTests.swift */,
 				492B6F3A2C27238B003F39CB /* FetchErrorTests.swift */,
 				492B6F382C2721F6003F39CB /* FetchStateTests.swift */,
-				492B6F3C2C272752003F39CB /* CarDataFetchServiceTests.swift */,
-				494CF5482C2268F100DEA3DA /* ScreenViewModelTests.swift */,
-				492B6F2C2C270445003F39CB /* ImagePaginationManagerTests.swift */,
-				492B6F4A2C27360E003F39CB /* DoorStateTests.swift */,
+				49CF1DE12C28EAE700337118 /* SettingsModelTests.swift */,
 				492B6F4C2C2736F9003F39CB /* IconTests.swift */,
 				492B6F2B2C270412003F39CB /* Mocks */,
 			);
@@ -352,9 +336,13 @@
 			children = (
 				494CF5A42C23408D00DEA3DA /* CarScreenViewModel.swift */,
 				494CF5E92C238FDC00DEA3DA /* CarScreenViewModelInterface.swift */,
-				494CF5E72C238FC200DEA3DA /* CarInterfaceState.swift */,
 				494CF6572C261FE600DEA3DA /* AlertViewInfo.swift */,
-				494CF65F2C2684BB00DEA3DA /* Services */,
+				494CF6342C25AD6C00DEA3DA /* ImagePagingViewModelInterface.swift */,
+				494CF5EB2C23D81900DEA3DA /* ImagePagingViewModel.swift */,
+				494CF6622C2684FF00DEA3DA /* SettingItemFactoryInterface.swift */,
+				494CF6602C2684E000DEA3DA /* SettingItemFactory.swift */,
+				494CF6552C261AB300DEA3DA /* TimerManagerInterface.swift */,
+				494CF6222C24BEA300DEA3DA /* TimerManager.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -364,23 +352,8 @@
 			children = (
 				494CF5992C23373300DEA3DA /* DataFetch */,
 				494CF5AC2C2340EC00DEA3DA /* Entities */,
-				494CF5AB2C2340DC00DEA3DA /* State */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		494CF5AB2C2340DC00DEA3DA /* State */ = {
-			isa = PBXGroup;
-			children = (
-				494CF5B82C23416900DEA3DA /* DoorStates.swift */,
-				494CF6152C2480BC00DEA3DA /* EngineState.swift */,
-				494CF6042C24233000DEA3DA /* SettingItemUIInfoInterface.swift */,
-				494CF60E2C2446B000DEA3DA /* SettingItemStateInterface.swift */,
-				494CF6082C24240400DEA3DA /* SettingItemUIInfo.swift */,
-				494CF5D82C23446700DEA3DA /* Engine */,
-				494CF5B52C23414700DEA3DA /* Doors */,
-			);
-			path = State;
 			sourceTree = "<group>";
 		};
 		494CF5AC2C2340EC00DEA3DA /* Entities */ = {
@@ -388,23 +361,12 @@
 			children = (
 				494CF5E12C234C4600DEA3DA /* CarDescriptionModel.swift */,
 				494CF5AD2C2340FD00DEA3DA /* CarModel.swift */,
-				494CF5F12C240AA700DEA3DA /* SettingModel */,
+				494CF5F22C240C4100DEA3DA /* SettingsModel.swift */,
+				494CF5EF2C240AA100DEA3DA /* SettingModelProtocol.swift */,
+				494CF5B12C23412D00DEA3DA /* EngineModel.swift */,
+				494CF5B32C23413900DEA3DA /* DoorModel.swift */,
 			);
 			path = Entities;
-			sourceTree = "<group>";
-		};
-		494CF5B52C23414700DEA3DA /* Doors */ = {
-			isa = PBXGroup;
-			children = (
-				494CF61E2C249F8A00DEA3DA /* DoorStateInterface.swift */,
-				494CF6432C25CCF100DEA3DA /* DoorChangableInterface .swift */,
-				494CF6452C25DFAE00DEA3DA /* DoorUIChangableAttributes.swift */,
-				494CF64F2C25E49800DEA3DA /* DoorUIFixedAttributes.swift */,
-				494CF5B62C23415B00DEA3DA /* DoorLockedState.swift */,
-				494CF6172C24816400DEA3DA /* DoorLockingState.swift */,
-				494CF5BA2C23417A00DEA3DA /* DoorUnlockedState.swift */,
-			);
-			path = Doors;
 			sourceTree = "<group>";
 		};
 		494CF5BE2C2341B000DEA3DA /* Views */ = {
@@ -415,6 +377,7 @@
 				494CF63A2C25B5F000DEA3DA /* ReusableViews */,
 				494CF6002C2421CB00DEA3DA /* SettingsView */,
 				494CF5C92C23421400DEA3DA /* ImagesCollectionView.swift */,
+				494CF5C72C23420700DEA3DA /* ButtonType.swift */,
 				494CF5CD2C23422D00DEA3DA /* UpdateInfoView.swift */,
 			);
 			path = Views;
@@ -431,40 +394,14 @@
 			path = BottomToolbar;
 			sourceTree = "<group>";
 		};
-		494CF5D82C23446700DEA3DA /* Engine */ = {
-			isa = PBXGroup;
-			children = (
-				494CF6202C249FA600DEA3DA /* EngineStateInerface.swift */,
-				494CF6472C25DFEA00DEA3DA /* EngineChangableInterface.swift */,
-				494CF6492C25E00000DEA3DA /* EngineUIChangableAttributes.swift */,
-				494CF64D2C25E41F00DEA3DA /* EngineUIFixedAttributes.swift */,
-				494CF5DB2C2344BB00DEA3DA /* EngineStartedState.swift */,
-				494CF5DD2C2344DC00DEA3DA /* EngineStoppedState.swift */,
-			);
-			path = Engine;
-			sourceTree = "<group>";
-		};
-		494CF5F12C240AA700DEA3DA /* SettingModel */ = {
-			isa = PBXGroup;
-			children = (
-				494CF5F22C240C4100DEA3DA /* SettingsModel.swift */,
-				494CF5EF2C240AA100DEA3DA /* SettingModelProtocol.swift */,
-				494CF5B12C23412D00DEA3DA /* EngineModel.swift */,
-				494CF5B32C23413900DEA3DA /* DoorModel.swift */,
-			);
-			path = SettingModel;
-			sourceTree = "<group>";
-		};
 		494CF6002C2421CB00DEA3DA /* SettingsView */ = {
 			isa = PBXGroup;
 			children = (
 				494CF5C52C2341F600DEA3DA /* CarSettingsView.swift */,
-				494CF5FA2C24210E00DEA3DA /* EngineSettingsView.swift */,
-				494CF5FC2C24212E00DEA3DA /* DoorsSettingsView.swift */,
-				494CF64B2C25E2C600DEA3DA /* DoorSettingsViewModifier.swift */,
-				494CF6532C2600C600DEA3DA /* SettingsButtonFactory.swift */,
-				494CF6512C25F60900DEA3DA /* EngineSettingButtonModifier.swift */,
-				494CF5C72C23420700DEA3DA /* ButtonType.swift */,
+				49CF1DD92C28DC7400337118 /* CarSettingsViewTheme.swift */,
+				49CF1DDD2C28E49B00337118 /* SettingItemUIInfoInterface.swift */,
+				49CF1DD52C28DBD200337118 /* Doors */,
+				49CF1DD62C28DBE100337118 /* Engine */,
 			);
 			path = SettingsView;
 			sourceTree = "<group>";
@@ -501,9 +438,9 @@
 			isa = PBXGroup;
 			children = (
 				494CF6262C256A9C00DEA3DA /* AlertView.swift */,
-				494CF63F2C25BAC800DEA3DA /* AlertViewUIAttributes.swift */,
-				494CF6362C25AE4200DEA3DA /* AlertTitleUIAttributes.swift */,
-				494CF63D2C25B81D00DEA3DA /* AlertButtonUIAttributes.swift */,
+				494CF63F2C25BAC800DEA3DA /* AlertViewUITheme.swift */,
+				494CF6362C25AE4200DEA3DA /* AlertTitleUITheme.swift */,
+				494CF63D2C25B81D00DEA3DA /* AlertButtonUITheme.swift */,
 				494CF6412C25BF2400DEA3DA /* AlertButtonModifier.swift */,
 			);
 			path = AlertView;
@@ -520,17 +457,48 @@
 			path = ReusableViews;
 			sourceTree = "<group>";
 		};
-		494CF65F2C2684BB00DEA3DA /* Services */ = {
+		49CF1DD52C28DBD200337118 /* Doors */ = {
 			isa = PBXGroup;
 			children = (
-				494CF6342C25AD6C00DEA3DA /* ImagePagingViewModelInterface.swift */,
-				494CF5EB2C23D81900DEA3DA /* ImagePagingViewModel.swift */,
-				494CF6622C2684FF00DEA3DA /* SettingItemFactoryInterface.swift */,
-				494CF6602C2684E000DEA3DA /* SettingItemFactory.swift */,
-				494CF6552C261AB300DEA3DA /* TimerManagerInterface.swift */,
-				494CF6222C24BEA300DEA3DA /* TimerManager.swift */,
+				494CF5FC2C24212E00DEA3DA /* DoorsSettingsView.swift */,
+				494CF64B2C25E2C600DEA3DA /* DoorSettingsViewModifier.swift */,
+				49CF1DD72C28DC1300337118 /* DoorUIFixedTheme.swift */,
+				49CF1DD32C28DBCD00337118 /* DoorButtonTheme.swift */,
+				49CF1DDF2C28E52900337118 /* State */,
 			);
-			path = Services;
+			path = Doors;
+			sourceTree = "<group>";
+		};
+		49CF1DD62C28DBE100337118 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				494CF6042C24233000DEA3DA /* SettingItemUIInfoInterface.swift */,
+				494CF5FA2C24210E00DEA3DA /* EngineSettingsView.swift */,
+				494CF6512C25F60900DEA3DA /* EngineSettingButtonModifier.swift */,
+				49CF1DE02C28E55000337118 /* State */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		49CF1DDF2C28E52900337118 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				494CF5B82C23416900DEA3DA /* DoorState.swift */,
+				49CF1DDB2C28E47C00337118 /* DoorItemUIInfoInterface.swift */,
+				494CF6082C24240400DEA3DA /* DoorItemUIInfo.swift */,
+				494CF6452C25DFAE00DEA3DA /* DoorUIChangableTheme.swift */,
+			);
+			path = State;
+			sourceTree = "<group>";
+		};
+		49CF1DE02C28E55000337118 /* State */ = {
+			isa = PBXGroup;
+			children = (
+				494CF6152C2480BC00DEA3DA /* EngineState.swift */,
+				49CF1DD12C28CF2A00337118 /* EngineItemUIInfo.swift */,
+				494CF6492C25E00000DEA3DA /* EngineUIChangableAttributes.swift */,
+			);
+			path = State;
 			sourceTree = "<group>";
 		};
 		49DA2FCF2C2806F300E6EE4C /* Color */ = {
@@ -675,34 +643,29 @@
 			files = (
 				494CF5A22C23405B00DEA3DA /* CarDataFetchServiceProtocol.swift in Sources */,
 				494CF5B42C23413900DEA3DA /* DoorModel.swift in Sources */,
-				494CF6502C25E49800DEA3DA /* DoorUIFixedAttributes.swift in Sources */,
 				494CF60D2C2431F400DEA3DA /* CircularLoadingView.swift in Sources */,
 				494CF6422C25BF2400DEA3DA /* AlertButtonModifier.swift in Sources */,
 				494CF5F02C240AA100DEA3DA /* SettingModelProtocol.swift in Sources */,
 				492B6F522C27392E003F39CB /* FetchErrorDescriptions.swift in Sources */,
-				494CF6462C25DFAE00DEA3DA /* DoorUIChangableAttributes.swift in Sources */,
+				494CF6462C25DFAE00DEA3DA /* DoorUIChangableTheme.swift in Sources */,
 				494CF5FD2C24212E00DEA3DA /* DoorsSettingsView.swift in Sources */,
 				494CF5C82C23420700DEA3DA /* ButtonType.swift in Sources */,
-				494CF60F2C2446B000DEA3DA /* SettingItemStateInterface.swift in Sources */,
 				494CF6052C24233000DEA3DA /* SettingItemUIInfoInterface.swift in Sources */,
 				492B6F542C273964003F39CB /* DataFetchServiceInterface.swift in Sources */,
-				494CF6542C2600C600DEA3DA /* SettingsButtonFactory.swift in Sources */,
 				494CF53A2C2268F000DEA3DA /* ContentView.swift in Sources */,
 				494CF6232C24BEA300DEA3DA /* TimerManager.swift in Sources */,
-				494CF6372C25AE4200DEA3DA /* AlertTitleUIAttributes.swift in Sources */,
+				494CF6372C25AE4200DEA3DA /* AlertTitleUITheme.swift in Sources */,
 				494CF5982C23371C00DEA3DA /* ColorExtension.swift in Sources */,
-				494CF5B72C23415B00DEA3DA /* DoorLockedState.swift in Sources */,
-				494CF61F2C249F8A00DEA3DA /* DoorStateInterface.swift in Sources */,
 				494CF6522C25F60900DEA3DA /* EngineSettingButtonModifier.swift in Sources */,
-				494CF6402C25BAC800DEA3DA /* AlertViewUIAttributes.swift in Sources */,
+				494CF6402C25BAC800DEA3DA /* AlertViewUITheme.swift in Sources */,
 				494CF5C02C2341C400DEA3DA /* CarDescriptionView.swift in Sources */,
 				494CF5F32C240C4100DEA3DA /* SettingsModel.swift in Sources */,
-				494CF6092C24240400DEA3DA /* SettingItemUIInfo.swift in Sources */,
+				49CF1DD22C28CF2A00337118 /* EngineItemUIInfo.swift in Sources */,
+				494CF6092C24240400DEA3DA /* DoorItemUIInfo.swift in Sources */,
 				494CF5D12C23426000DEA3DA /* BottomBarView.swift in Sources */,
 				494CF62C2C258E1700DEA3DA /* PaginationViewUIAttributes.swift in Sources */,
 				494CF6582C261FE600DEA3DA /* AlertViewInfo.swift in Sources */,
 				494CF5CE2C23422D00DEA3DA /* UpdateInfoView.swift in Sources */,
-				494CF6442C25CCF100DEA3DA /* DoorChangableInterface .swift in Sources */,
 				492B6F502C273737003F39CB /* IconNames.swift in Sources */,
 				494CF59B2C23374500DEA3DA /* DataFetchService.swift in Sources */,
 				494CF5B22C23412D00DEA3DA /* EngineModel.swift in Sources */,
@@ -714,35 +677,32 @@
 				494CF64A2C25E00000DEA3DA /* EngineUIChangableAttributes.swift in Sources */,
 				494CF5FB2C24210E00DEA3DA /* EngineSettingsView.swift in Sources */,
 				494CF6132C24716900DEA3DA /* ProjectColorSpecs.swift in Sources */,
-				494CF64E2C25E42000DEA3DA /* EngineUIFixedAttributes.swift in Sources */,
 				494CF6302C259C1D00DEA3DA /* TabItemProtocol.swift in Sources */,
 				494CF59F2C23404000DEA3DA /* FetchError.swift in Sources */,
 				494CF6612C2684E000DEA3DA /* SettingItemFactory.swift in Sources */,
-				494CF63E2C25B81D00DEA3DA /* AlertButtonUIAttributes.swift in Sources */,
+				494CF63E2C25B81D00DEA3DA /* AlertButtonUITheme.swift in Sources */,
 				494CF64C2C25E2C600DEA3DA /* DoorSettingsViewModifier.swift in Sources */,
 				494CF5A52C23408D00DEA3DA /* CarScreenViewModel.swift in Sources */,
 				494CF5C22C2341D200DEA3DA /* CarDescrViewUIAttributes.swift in Sources */,
-				494CF6482C25DFEA00DEA3DA /* EngineChangableInterface.swift in Sources */,
 				494CF5CA2C23421400DEA3DA /* ImagesCollectionView.swift in Sources */,
 				494CF5CC2C23422100DEA3DA /* PaginationView.swift in Sources */,
-				494CF5BB2C23417A00DEA3DA /* DoorUnlockedState.swift in Sources */,
-				494CF5E82C238FC200DEA3DA /* CarInterfaceState.swift in Sources */,
 				494CF62E2C259A9E00DEA3DA /* BottomBarUIAttributes.swift in Sources */,
+				49CF1DD82C28DC1300337118 /* DoorUIFixedTheme.swift in Sources */,
 				494CF5E62C238FB100DEA3DA /* FetchState.swift in Sources */,
-				494CF5DE2C2344DC00DEA3DA /* EngineStoppedState.swift in Sources */,
+				49CF1DD42C28DBCD00337118 /* DoorButtonTheme.swift in Sources */,
 				494CF6162C2480BC00DEA3DA /* EngineState.swift in Sources */,
-				494CF5DC2C2344BB00DEA3DA /* EngineStartedState.swift in Sources */,
 				494CF6272C256A9C00DEA3DA /* AlertView.swift in Sources */,
+				49CF1DDE2C28E49B00337118 /* SettingItemUIInfoInterface.swift in Sources */,
 				494CF5BD2C23418D00DEA3DA /* Icons.swift in Sources */,
 				494CF59D2C23402F00DEA3DA /* CarDataFetchModel.swift in Sources */,
-				494CF5B92C23416900DEA3DA /* DoorStates.swift in Sources */,
+				494CF5B92C23416900DEA3DA /* DoorState.swift in Sources */,
 				494CF5C62C2341F600DEA3DA /* CarSettingsView.swift in Sources */,
-				494CF6212C249FA600DEA3DA /* EngineStateInerface.swift in Sources */,
 				494CF5D32C23429B00DEA3DA /* Tab.swift in Sources */,
+				49CF1DDC2C28E47C00337118 /* DoorItemUIInfoInterface.swift in Sources */,
 				494CF5EC2C23D81900DEA3DA /* ImagePagingViewModel.swift in Sources */,
 				494CF5E22C234C4600DEA3DA /* CarDescriptionModel.swift in Sources */,
-				494CF6182C24816400DEA3DA /* DoorLockingState.swift in Sources */,
 				494CF6352C25AD6C00DEA3DA /* ImagePagingViewModelInterface.swift in Sources */,
+				49CF1DDA2C28DC7400337118 /* CarSettingsViewTheme.swift in Sources */,
 				494CF6562C261AB300DEA3DA /* TimerManagerInterface.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -756,14 +716,14 @@
 				492B6F2D2C270445003F39CB /* ImagePaginationManagerTests.swift in Sources */,
 				492B6F2F2C2714CF003F39CB /* SettingItemFactoryTests.swift in Sources */,
 				492B6F392C2721F6003F39CB /* FetchStateTests.swift in Sources */,
-				492B6F492C2735DC003F39CB /* CarInterfaceStateFake.swift in Sources */,
 				492B6F4D2C2736F9003F39CB /* IconTests.swift in Sources */,
 				494CF6652C2690A800DEA3DA /* CarDataFetchServiceMock.swift in Sources */,
+				49CF1DE42C28F0C700337118 /* DoorItemUIInfoFake.swift in Sources */,
+				49CF1DE22C28EAE700337118 /* SettingsModelTests.swift in Sources */,
 				492B6F312C27183D003F39CB /* SettingItemFactoryMock.swift in Sources */,
 				494CF6672C2690D900DEA3DA /* TimerManagerMock.swift in Sources */,
 				492B6F3D2C272752003F39CB /* CarDataFetchServiceTests.swift in Sources */,
 				492B6F452C273045003F39CB /* SettingItemUIInfoMock.swift in Sources */,
-				492B6F4B2C27360E003F39CB /* DoorStateTests.swift in Sources */,
 				492B6F3B2C27238B003F39CB /* FetchErrorTests.swift in Sources */,
 				492B6F372C271E48003F39CB /* TimeManagerTests.swift in Sources */,
 				492B6F332C271C38003F39CB /* SettingModelFake.swift in Sources */,

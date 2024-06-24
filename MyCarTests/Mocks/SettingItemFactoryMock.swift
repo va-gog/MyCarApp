@@ -8,8 +8,8 @@
 @testable import MyCar
 
 struct SettingItemFactoryMock: SettingItemFactoryInterface {
-    func settingForModel(_ model: SettingModelProtocol) -> SettingItemUIInfoInterface? {
-        SettingItemUIInfoMock()
+    func settingForModel(_ model: SettingModelProtocol) -> (any SettingItemUIInfoInterface)? {
+        SettingItemUIInfoFake()
     }
     
     

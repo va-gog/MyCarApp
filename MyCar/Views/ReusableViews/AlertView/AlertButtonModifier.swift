@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AlertButtonModifier: ViewModifier {
-    var attributes: AlertButtonUIAttributes
+    var attributes: AlertButtonUITheme
     var title: String
     var onAction: () -> Void
     

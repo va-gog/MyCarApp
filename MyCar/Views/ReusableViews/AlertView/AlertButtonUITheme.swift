@@ -1,5 +1,5 @@
 //
-//  AlertButtonUIAttributes.swift
+//  AlertButtonUITheme.swift
 //  MyCar
 //
 //  Created by Gohar Vardanyan on 6/21/24.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct AlertButtonUIAttributes {
+struct AlertButtonUITheme {
     let background: Color
     let buttonHeight: CGFloat = 50
     let cornerRadius: CGFloat = 10
