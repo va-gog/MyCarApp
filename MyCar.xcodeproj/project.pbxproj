@@ -22,6 +22,7 @@
 		492B6F522C27392E003F39CB /* FetchErrorDescriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B6F512C27392E003F39CB /* FetchErrorDescriptions.swift */; };
 		492B6F542C273964003F39CB /* DataFetchServiceInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492B6F532C273964003F39CB /* DataFetchServiceInterface.swift */; };
 		494BF9872C28F5ED00019F55 /* FetchServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494BF9862C28F5ED00019F55 /* FetchServiceMock.swift */; };
+		494BF98B2C2926D300019F55 /* ImagePagingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494BF98A2C2926D300019F55 /* ImagePagingViewModel.swift */; };
 		494CF5382C2268F000DEA3DA /* MyCarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5372C2268F000DEA3DA /* MyCarApp.swift */; };
 		494CF53A2C2268F000DEA3DA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5392C2268F000DEA3DA /* ContentView.swift */; };
 		494CF53C2C2268F100DEA3DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 494CF53B2C2268F100DEA3DA /* Assets.xcassets */; };
@@ -53,7 +54,6 @@
 		494CF5E22C234C4600DEA3DA /* CarDescriptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5E12C234C4600DEA3DA /* CarDescriptionModel.swift */; };
 		494CF5E62C238FB100DEA3DA /* FetchState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5E52C238FB100DEA3DA /* FetchState.swift */; };
 		494CF5EA2C238FDC00DEA3DA /* CarScreenViewModelInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5E92C238FDC00DEA3DA /* CarScreenViewModelInterface.swift */; };
-		494CF5EC2C23D81900DEA3DA /* ImagePagingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5EB2C23D81900DEA3DA /* ImagePagingViewModel.swift */; };
 		494CF5F02C240AA100DEA3DA /* SettingModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5EF2C240AA100DEA3DA /* SettingModelProtocol.swift */; };
 		494CF5F32C240C4100DEA3DA /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5F22C240C4100DEA3DA /* SettingsModel.swift */; };
 		494CF5FB2C24210E00DEA3DA /* EngineSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494CF5FA2C24210E00DEA3DA /* EngineSettingsView.swift */; };
@@ -126,6 +126,7 @@
 		492B6F512C27392E003F39CB /* FetchErrorDescriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchErrorDescriptions.swift; sourceTree = "<group>"; };
 		492B6F532C273964003F39CB /* DataFetchServiceInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFetchServiceInterface.swift; sourceTree = "<group>"; };
 		494BF9862C28F5ED00019F55 /* FetchServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchServiceMock.swift; sourceTree = "<group>"; };
+		494BF98A2C2926D300019F55 /* ImagePagingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePagingViewModel.swift; sourceTree = "<group>"; };
 		494CF5342C2268F000DEA3DA /* MyCar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyCar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		494CF5372C2268F000DEA3DA /* MyCarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyCarApp.swift; sourceTree = "<group>"; };
 		494CF5392C2268F000DEA3DA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -160,7 +161,6 @@
 		494CF5E12C234C4600DEA3DA /* CarDescriptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDescriptionModel.swift; sourceTree = "<group>"; };
 		494CF5E52C238FB100DEA3DA /* FetchState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchState.swift; sourceTree = "<group>"; };
 		494CF5E92C238FDC00DEA3DA /* CarScreenViewModelInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarScreenViewModelInterface.swift; sourceTree = "<group>"; };
-		494CF5EB2C23D81900DEA3DA /* ImagePagingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImagePagingViewModel.swift; path = Services/ImagePagingViewModel.swift; sourceTree = "<group>"; };
 		494CF5EF2C240AA100DEA3DA /* SettingModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModelProtocol.swift; sourceTree = "<group>"; };
 		494CF5F22C240C4100DEA3DA /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
 		494CF5FA2C24210E00DEA3DA /* EngineSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EngineSettingsView.swift; sourceTree = "<group>"; };
@@ -338,7 +338,7 @@
 				494CF5E92C238FDC00DEA3DA /* CarScreenViewModelInterface.swift */,
 				494CF6572C261FE600DEA3DA /* AlertViewInfo.swift */,
 				494CF6342C25AD6C00DEA3DA /* ImagePagingViewModelInterface.swift */,
-				494CF5EB2C23D81900DEA3DA /* ImagePagingViewModel.swift */,
+				494BF98A2C2926D300019F55 /* ImagePagingViewModel.swift */,
 				494CF6622C2684FF00DEA3DA /* SettingItemFactoryInterface.swift */,
 				494CF6602C2684E000DEA3DA /* SettingItemFactory.swift */,
 				494CF6552C261AB300DEA3DA /* TimerManagerInterface.swift */,
@@ -641,6 +641,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				494BF98B2C2926D300019F55 /* ImagePagingViewModel.swift in Sources */,
 				494CF5A22C23405B00DEA3DA /* CarDataFetchServiceProtocol.swift in Sources */,
 				494CF5B42C23413900DEA3DA /* DoorModel.swift in Sources */,
 				494CF60D2C2431F400DEA3DA /* CircularLoadingView.swift in Sources */,
@@ -699,7 +700,6 @@
 				494CF5C62C2341F600DEA3DA /* CarSettingsView.swift in Sources */,
 				494CF5D32C23429B00DEA3DA /* Tab.swift in Sources */,
 				49CF1DDC2C28E47C00337118 /* DoorItemUIInfoInterface.swift in Sources */,
-				494CF5EC2C23D81900DEA3DA /* ImagePagingViewModel.swift in Sources */,
 				494CF5E22C234C4600DEA3DA /* CarDescriptionModel.swift in Sources */,
 				494CF6352C25AD6C00DEA3DA /* ImagePagingViewModelInterface.swift in Sources */,
 				49CF1DDA2C28DC7400337118 /* CarSettingsViewTheme.swift in Sources */,

@@ -16,7 +16,8 @@ struct AlertView: View {
     let rightButtonText: String
     let onLeftButton: () -> Void
     let onRightButton: () -> Void
-    let theme = AlertViewUITheme()
+    
+    private let theme = AlertViewUITheme()
     
     var body: some View {
         VStack(spacing: theme.verticalSpaceing) {
